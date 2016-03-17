@@ -1,15 +1,15 @@
 //lol
 #include <iostream>
 /*! \mainpage
- * \brief $Simple game.$
+ * \brief Simple game.
  *
  * \note with gh-pages
  *
- * \author  $Fotoblysk$
+ * \author  Fotoblysk
  *
  * \version $Revision: 0.01 $
  *
- * \date  $2016/03/13 21:44:00 $
+ * \date  2016/03/13 21:44:00
  *
  * Contact: fotoblysk@fejm.pl
  *

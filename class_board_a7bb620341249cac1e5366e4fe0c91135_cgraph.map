@@ -1,0 +1,4 @@
+<map id="Board::init" name="Board::init">
+<area shape="rect" id="node2" href="$class_square.html#a719a5dee91eaa87a7128061193388648" title="Sets position of sf::RectangleShape square. " alt="" coords="135,5,271,32"/>
+<area shape="rect" id="node3" href="$class_square.html#ad62196a5af085b2cd38df1cc698226c8" title="This is function used by current class to set Square(and sf::RectangleShape) current texture..." alt="" coords="137,56,269,83"/>
+</map>

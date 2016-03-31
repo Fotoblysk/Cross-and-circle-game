@@ -1,0 +1,11 @@
+<map id="Square::setTexture" name="Square::setTexture">
+<area shape="rect" id="node2" href="$class_board.html#a7bb620341249cac1e5366e4fe0c91135" title="inits board sets size and mouse var " alt="" coords="195,56,276,83"/>
+<area shape="rect" id="node7" href="$class_square.html#ab425c2f7271014c9d01eff4b0e053b31" title="this is function used by Board to set Square marked " alt="" coords="185,107,285,133"/>
+<area shape="rect" id="node3" href="$class_board.html#af98d75fee5ec0d1fc87a41a64a2dea91" title="inits board sets size and mouse var allocates dynamic array of squares (runs init function)..." alt="" coords="354,5,453,32"/>
+<area shape="rect" id="node4" href="$class_engine.html#af4a62564ef402b7b5a8d880f05d5b120" title="initialization of Engine, sets player textures " alt="" coords="529,56,616,83"/>
+<area shape="rect" id="node5" href="$class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f" title="Runs engine starts multi player seats switch game. " alt="" coords="829,81,956,108"/>
+<area shape="rect" id="node6" href="$class_game.html#af4259d9962bf0998d01c6e594eca2f58" title="Initialization of RenderWindow&amp; window &#45; main window of the game. " alt="" coords="1004,81,1104,108"/>
+<area shape="rect" id="node8" href="$class_board.html#a204e367441e2b61d02721e70fb0b9a99" title="checks if just done turn have made current player winnner " alt="" coords="333,107,473,133"/>
+<area shape="rect" id="node9" href="$class_board.html#a05f30f65527fdbfe4950040f2e44da6f" title="updates board highlight squares (pointlesss setting Player** doing in evry loop &#45; move to init)&#45; poin..." alt="" coords="521,107,624,133"/>
+<area shape="rect" id="node10" href="$class_engine.html#aaa07c6646868b4f752fbb91c3ec5380c" title="Engine::update" alt="" coords="672,107,781,133"/>
+</map>

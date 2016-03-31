@@ -1,0 +1,6 @@
+<map id="Board::init" name="Board::init">
+<area shape="rect" id="node2" href="$class_board.html#af98d75fee5ec0d1fc87a41a64a2dea91" title="inits board sets size and mouse var allocates dynamic array of squares (runs init function)..." alt="" coords="135,5,233,32"/>
+<area shape="rect" id="node3" href="$class_engine.html#af4a62564ef402b7b5a8d880f05d5b120" title="initialization of Engine, sets player textures " alt="" coords="141,56,227,83"/>
+<area shape="rect" id="node4" href="$class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f" title="Runs engine starts multi player seats switch game. " alt="" coords="281,56,408,83"/>
+<area shape="rect" id="node5" href="$class_game.html#af4259d9962bf0998d01c6e594eca2f58" title="Initialization of RenderWindow&amp; window &#45; main window of the game. " alt="" coords="456,56,556,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Engine::keyboardEvents" name="Engine::keyboardEvents">
+<area shape="rect" id="node2" href="$class_engine.html#a5c3c086eeec69ae6780eb0ffb5a9848e" title="updates physics of the game, draws board. " alt="" coords="216,5,323,32"/>
+<area shape="rect" id="node3" href="$class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f" title="Runs engine starts multi player seats switch game. " alt="" coords="371,5,497,32"/>
+<area shape="rect" id="node4" href="$class_game.html#af4259d9962bf0998d01c6e594eca2f58" title="Initialization of RenderWindow&amp; window &#45; main window of the game. " alt="" coords="545,5,645,32"/>
+</map>

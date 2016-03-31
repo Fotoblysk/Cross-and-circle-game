@@ -1,4 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classlol.html" title="lol" alt="" coords="5,5,44,32"/>
-<area shape="rect" id="node2" href="$classxd.html" title="xd" alt="" coords="92,5,131,32"/>
+<area shape="rect" id="node2" href="$class_board.html" title="Engine class. Class which manage main loop of game, reads keyboard events, update physics..." alt="" coords="159,5,215,32"/>
+<area shape="rect" id="node3" href="$class_square.html" title="Square class. Class which is used to build board this class may be remade to inheritance from sf::Rec..." alt="" coords="156,56,219,83"/>
 </map>

@@ -1,0 +1,4 @@
+<map id="Engine::init" name="Engine::init">
+<area shape="rect" id="node2" href="$class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f" title="Runs engine starts multi player seats switch game. " alt="" coords="140,5,267,32"/>
+<area shape="rect" id="node3" href="$class_game.html#af4259d9962bf0998d01c6e594eca2f58" title="Initialization of RenderWindow&amp; window &#45; main window of the game. " alt="" coords="315,5,415,32"/>
+</map>

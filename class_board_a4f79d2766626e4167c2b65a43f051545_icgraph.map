@@ -1,0 +1,7 @@
+<map id="Board::checkWin" name="Board::checkWin">
+<area shape="rect" id="node2" href="$class_board.html#a204e367441e2b61d02721e70fb0b9a99" title="checks if just done turn have made current player winnner " alt="" coords="176,5,316,32"/>
+<area shape="rect" id="node3" href="$class_board.html#a05f30f65527fdbfe4950040f2e44da6f" title="updates board highlight squares (pointlesss setting Player** doing in evry loop &#45; move to init)&#45; poin..." alt="" coords="364,5,467,32"/>
+<area shape="rect" id="node4" href="$class_engine.html#aaa07c6646868b4f752fbb91c3ec5380c" title="Engine::update" alt="" coords="515,5,624,32"/>
+<area shape="rect" id="node5" href="$class_game.html#ae8638ccdb0ef3bf39a6affa30aa1258f" title="Runs engine starts multi player seats switch game. " alt="" coords="672,5,799,32"/>
+<area shape="rect" id="node6" href="$class_game.html#af4259d9962bf0998d01c6e594eca2f58" title="Initialization of RenderWindow&amp; window &#45; main window of the game. " alt="" coords="847,5,947,32"/>
+</map>

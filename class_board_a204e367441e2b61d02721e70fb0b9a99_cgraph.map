@@ -1,0 +1,6 @@
+<map id="Board::squareAction" name="Board::squareAction">
+<area shape="rect" id="node2" href="$class_square.html#ab425c2f7271014c9d01eff4b0e053b31" title="this is function used by Board to set Square marked " alt="" coords="205,31,305,57"/>
+<area shape="rect" id="node5" href="$class_board.html#a4f79d2766626e4167c2b65a43f051545" title="Board::checkWin" alt="" coords="193,81,316,108"/>
+<area shape="rect" id="node3" href="$class_square.html#ad62196a5af085b2cd38df1cc698226c8" title="This is function used by current class to set Square(and sf::RectangleShape) current texture..." alt="" coords="371,5,503,32"/>
+<area shape="rect" id="node4" href="$class_player.html#a72e351147bd2bb48bdea9ba74dcc7f81" title="returns pointer to current player texture (texture_marked) " alt="" coords="364,56,509,83"/>
+</map>

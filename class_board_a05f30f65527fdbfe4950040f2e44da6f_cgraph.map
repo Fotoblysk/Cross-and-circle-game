@@ -1,0 +1,7 @@
+<map id="Board::update" name="Board::update">
+<area shape="rect" id="node2" href="$class_board.html#a204e367441e2b61d02721e70fb0b9a99" title="checks if just done turn have made current player winnner " alt="" coords="156,56,296,83"/>
+<area shape="rect" id="node3" href="$class_square.html#ab425c2f7271014c9d01eff4b0e053b31" title="this is function used by Board to set Square marked " alt="" coords="355,31,455,57"/>
+<area shape="rect" id="node6" href="$class_board.html#a4f79d2766626e4167c2b65a43f051545" title="Board::checkWin" alt="" coords="344,81,467,108"/>
+<area shape="rect" id="node4" href="$class_square.html#ad62196a5af085b2cd38df1cc698226c8" title="This is function used by current class to set Square(and sf::RectangleShape) current texture..." alt="" coords="521,5,653,32"/>
+<area shape="rect" id="node5" href="$class_player.html#a72e351147bd2bb48bdea9ba74dcc7f81" title="returns pointer to current player texture (texture_marked) " alt="" coords="515,56,660,83"/>
+</map>

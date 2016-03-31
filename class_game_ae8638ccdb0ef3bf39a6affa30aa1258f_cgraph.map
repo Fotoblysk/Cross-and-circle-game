@@ -1,0 +1,16 @@
+<map id="Game::startGame" name="Game::startGame">
+<area shape="rect" id="node2" href="$class_engine.html#af4a62564ef402b7b5a8d880f05d5b120" title="initialization of Engine, sets player textures " alt="" coords="191,56,278,83"/>
+<area shape="rect" id="node7" href="$class_engine.html#a5c3c086eeec69ae6780eb0ffb5a9848e" title="updates physics of the game, draws board. " alt="" coords="181,107,288,133"/>
+<area shape="rect" id="node9" href="$class_engine.html#aaa07c6646868b4f752fbb91c3ec5380c" title="Engine::update" alt="" coords="180,157,289,184"/>
+<area shape="rect" id="node3" href="$class_board.html#a7bb620341249cac1e5366e4fe0c91135" title="inits board sets size and mouse var " alt="" coords="384,5,465,32"/>
+<area shape="rect" id="node6" href="$class_player.html#ac2412646697fb7738a5d0c3aeb16ba94" title="function setting player texture (initialization staff) " alt="" coords="361,56,489,83"/>
+<area shape="rect" id="node4" href="$class_square.html#a719a5dee91eaa87a7128061193388648" title="Sets position of sf::RectangleShape square. " alt="" coords="562,5,698,32"/>
+<area shape="rect" id="node5" href="$class_square.html#ad62196a5af085b2cd38df1cc698226c8" title="This is function used by current class to set Square(and sf::RectangleShape) current texture..." alt="" coords="925,85,1057,112"/>
+<area shape="rect" id="node8" href="$class_engine.html#af4b44a2dd17e35dfc5bb21917508627b" title="reads keyboard events " alt="" coords="343,107,506,133"/>
+<area shape="rect" id="node10" href="$class_engine.html#ac34480273d578527e8380758817e7bee" title="gets global mouse position " alt="" coords="337,157,512,184"/>
+<area shape="rect" id="node11" href="$class_board.html#a05f30f65527fdbfe4950040f2e44da6f" title="updates board highlight squares (pointlesss setting Player** doing in evry loop &#45; move to init)&#45; poin..." alt="" coords="373,208,476,235"/>
+<area shape="rect" id="node12" href="$class_board.html#a204e367441e2b61d02721e70fb0b9a99" title="checks if just done turn have made current player winnner " alt="" coords="560,201,700,228"/>
+<area shape="rect" id="node13" href="$class_square.html#ab425c2f7271014c9d01eff4b0e053b31" title="this is function used by Board to set Square marked " alt="" coords="759,139,859,165"/>
+<area shape="rect" id="node15" href="$class_board.html#a4f79d2766626e4167c2b65a43f051545" title="Board::checkWin" alt="" coords="748,201,871,228"/>
+<area shape="rect" id="node14" href="$class_player.html#a72e351147bd2bb48bdea9ba74dcc7f81" title="returns pointer to current player texture (texture_marked) " alt="" coords="919,139,1064,165"/>
+</map>

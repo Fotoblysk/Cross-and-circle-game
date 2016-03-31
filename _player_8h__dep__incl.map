@@ -1,0 +1,12 @@
+<map id="Player.h" name="Player.h">
+<area shape="rect" id="node2" href="$_square_8h.html" title="Square.h" alt="" coords="110,80,185,107"/>
+<area shape="rect" id="node4" href="$_engine_8h.html" title="Engine.h" alt="" coords="151,229,224,256"/>
+<area shape="rect" id="node11" href="$_player_8cpp.html" title="Player.cpp" alt="" coords="267,80,351,107"/>
+<area shape="rect" id="node3" href="$_board_8h.html" title="Board.h" alt="" coords="13,155,79,181"/>
+<area shape="rect" id="node10" href="$_square_8cpp.html" title="Square.cpp" alt="" coords="103,155,191,181"/>
+<area shape="rect" id="node9" href="$_board_8cpp.html" title="Board.cpp" alt="" coords="5,229,87,256"/>
+<area shape="rect" id="node5" href="$_game_8h.html" title="Game.h" alt="" coords="103,304,171,331"/>
+<area shape="rect" id="node8" href="$_engine_8cpp.html" title="Engine.cpp" alt="" coords="195,304,281,331"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title="only main(). mainpage in. " alt="" coords="49,379,123,405"/>
+<area shape="rect" id="node7" href="$_game_8cpp.html" title="Game.cpp" alt="" coords="147,379,230,405"/>
+</map>

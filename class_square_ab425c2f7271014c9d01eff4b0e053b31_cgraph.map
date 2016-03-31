@@ -1,0 +1,4 @@
+<map id="Square::mark" name="Square::mark">
+<area shape="rect" id="node2" href="$class_square.html#ad62196a5af085b2cd38df1cc698226c8" title="This is function used by current class to set Square(and sf::RectangleShape) current texture..." alt="" coords="160,5,292,32"/>
+<area shape="rect" id="node3" href="$class_player.html#a72e351147bd2bb48bdea9ba74dcc7f81" title="returns pointer to current player texture (texture_marked) " alt="" coords="153,56,299,83"/>
+</map>

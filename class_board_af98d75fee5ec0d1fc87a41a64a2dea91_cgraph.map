@@ -1,0 +1,5 @@
+<map id="Board::Board" name="Board::Board">
+<area shape="rect" id="node2" href="$class_board.html#a7bb620341249cac1e5366e4fe0c91135" title="inits board sets size and mouse var " alt="" coords="152,31,233,57"/>
+<area shape="rect" id="node3" href="$class_square.html#a719a5dee91eaa87a7128061193388648" title="Sets position of sf::RectangleShape square. " alt="" coords="281,5,417,32"/>
+<area shape="rect" id="node4" href="$class_square.html#ad62196a5af085b2cd38df1cc698226c8" title="This is function used by current class to set Square(and sf::RectangleShape) current texture..." alt="" coords="283,56,415,83"/>
+</map>

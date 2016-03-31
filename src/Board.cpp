@@ -35,7 +35,7 @@ void Board::init(int height_in, int width_in,sf::Vector2i* mouse_in){
     {
         for(int width_index=0;width_index<width;width_index++)
         {
-            board_array[height_index][width_index].setPosition(width_index*(SQUARE_SIZE+2),height_index*(SQUARE_SIZE+2));
+            board_array[height_index][width_index].setPosition(width_index*(SQUARE_SIZE+2)+MOVE_WIDTH,height_index*(SQUARE_SIZE+2)+MOVE_HEIGHT);
             board_array[height_index][width_index].setTexture(&texture);
         }
     }
@@ -82,7 +82,7 @@ bool Board::squareAction(int height_index, int width_index, Player* currrent_tur
         board_array[height_index][width_index].square.setFillColor(sf::Color::White);
     return true;
 }
-bool Board::checkWin(int height_index,int width_index,Player* currrent_turn){
+bool Board::checkWin(int height_index,int width_index,Player* currrent_turn)const{
     /////////
     int counter=1;
     int i=1;
@@ -93,11 +93,12 @@ bool Board::checkWin(int height_index,int width_index,Player* currrent_turn){
     while(height_index-i>=0&&board_array[height_index-i++][width_index].getMarkedBy()==currrent_turn)
         counter++;
     if(counter>=IN_A_ROW_TO_WIN)
-        {
-            DEBUG_MSG("ENDO GEJMO");
-            exit(1);
-            return true;
-        }////////////////////////
+    {
+        DEBUG_MSG("ENDO GEJMO");
+        exit(1);
+        return true;
+    }
+    ////////////////////////
 
 
     ///////////////////////
@@ -130,7 +131,7 @@ bool Board::checkWin(int height_index,int width_index,Player* currrent_turn){
             exit(1);
             return true;
         }
-        ////////////////////
+    ////////////////////
     ///////////////////////
     counter=1;
     i=1;

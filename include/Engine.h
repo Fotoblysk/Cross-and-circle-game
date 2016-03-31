@@ -11,6 +11,7 @@
 class Engine
 {
     public:
+        enum State {Start,Turn,Winner,End};             //TODO(FOTO#5#): LOL use it no exit()
         Engine();                                       ///<sets vars to neutral state, pointers to NULL
         virtual ~Engine();                              ///<only debug msg
         void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
@@ -18,8 +19,8 @@ class Engine
         void events(sf::RenderWindow& window,sf::Event& event); ///<reads events - all
     protected:
     private:
-        Board board;                                    /// contains dynamic allocated array of squares
-        sf::Vector2i mouse;                             /// current mouse position
+        Board board;                                    ///< contains dynamic allocated array of squares
+        sf::Vector2i mouse;                             ///< current mouse position
         Player players[2];                              ///<just for tests array of players
         Player* turn;                                   ///< pointer to Player whose turn it is
         int player_number;                              ///< To fix .
@@ -28,7 +29,7 @@ class Engine
         bool last_turn_was_succesfull;                  ///< true if last turn was successful (no illegal action like marking already marked square)
         void getMousePosition(sf::RenderWindow& window);                ///< gets global mouse position
         void keyboardEvents(sf::RenderWindow& window,sf::Event& event); ///< reads keyboard events
-
+        State state;                                    //TODO(FOTO#5#): LOL use it no exit()
 };
 
 #endif // ENGINE_H

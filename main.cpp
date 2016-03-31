@@ -1,5 +1,12 @@
-//lol
-#include <iostream>
+/*! \file main.cpp
+ *
+ * \brief only main(). mainpage in.
+ *
+ * \author  Fotoblysk
+ *
+ * \date  2016/03/18 12:00
+*/
+
 /*! \mainpage
  * \brief Simple game.
  *
@@ -17,27 +24,19 @@
  *
  * $Id: Cross-and-circle-game,v 0.01  21:44:00 bv Exp Fotoblysk$
 */
-#include <SFML/Graphics.hpp>
 
+#include <iostream>
+#include <SFML/Graphics.hpp>
+#include <Game.h>
+
+
+/*!
+ * \brief Runs RenderWindow. Runs game.
+*/
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-    sf::CircleShape shape(100.f);
-    shape.setFillColor(sf::Color::Green);
-
-    while (window.isOpen())
-    {
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.draw(shape);
-        window.display();
-    }
-
+    int lol;
+    sf::RenderWindow window(sf::VideoMode(500,500), "SFML window", sf::Style::Fullscreen );
+    Game game(window);
     return 0;
 }

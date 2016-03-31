@@ -1,0 +1,28 @@
+\hypertarget{main_8cpp}{}\section{C\+:/\+Users/\+Foto/\+Documents/\+Git\+Hub/\+Cross-\/and-\/circle-\/game/main.cpp File Reference}
+\label{main_8cpp}\index{C\+:/\+Users/\+Foto/\+Documents/\+Git\+Hub/\+Cross-\/and-\/circle-\/game/main.\+cpp@{C\+:/\+Users/\+Foto/\+Documents/\+Git\+Hub/\+Cross-\/and-\/circle-\/game/main.\+cpp}}
+
+
+only main. mainpage in.  
+
+
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$S\+F\+M\+L/\+Graphics.\+hpp$>$}\\*
+Include dependency graph for main.\+cpp\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{}int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCompactList}\small\item\em Runs Render\+Window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+only main. mainpage in. 
+
+\begin{DoxyAuthor}{Author}
+Fotoblysk
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2016/03/18 12\+:00 
+\end{DoxyDate}

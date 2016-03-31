@@ -1,0 +1,317 @@
+\hypertarget{class_board}{}\section{Board Class Reference}
+\label{class_board}\index{Board@{Board}}
+
+
+\hyperlink{class_engine}{Engine} class. Class which manage main loop of game, reads keyboard events, update physics. This class will menage menu and settings.  
+
+
+
+
+{\ttfamily \#include $<$Board.\+h$>$}
+
+
+
+Inheritance diagram for Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{class_board__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Board\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{Board} ()
+\begin{DoxyCompactList}\small\item\em pointers to null . vars to 0. \hyperlink{class_board}{Board} useless until initialized with init(...) \end{DoxyCompactList}\item 
+\hyperlink{class_board_af98d75fee5ec0d1fc87a41a64a2dea91}{Board} (int height\+\_\+in, int width\+\_\+in, sf\+::\+Vector2i $\ast$mouse\+\_\+in)
+\begin{DoxyCompactList}\small\item\em inits board sets size and mouse var allocates dynamic array of squares (runs init function). \end{DoxyCompactList}\item 
+virtual \hyperlink{class_board_af73f45730119a1fd8f6670f53f959e68}{$\sim$\+Board} ()
+\item 
+void \hyperlink{class_board_a7bb620341249cac1e5366e4fe0c91135}{init} (int height\+\_\+in, int width\+\_\+in, sf\+::\+Vector2i $\ast$mouse\+\_\+in)
+\begin{DoxyCompactList}\small\item\em inits board sets size and mouse var \end{DoxyCompactList}\item 
+bool \hyperlink{class_board_a05f30f65527fdbfe4950040f2e44da6f}{update} (bool $\ast$marked\+\_\+in, \hyperlink{class_player}{Player} $\ast$$\ast$currrent\+\_\+turn)
+\begin{DoxyCompactList}\small\item\em updates board highlight squares (pointlesss setting Player$\ast$$\ast$ doing in evry loop -\/ move to init)-\/ pointer remember pointer ids pointing to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_board_a4f79d2766626e4167c2b65a43f051545}{check\+Win} (int height\+\_\+index, int width\+\_\+index, \hyperlink{class_player}{Player} $\ast$$\ast$current\+\_\+turn)
+\item 
+bool \hyperlink{class_board_a204e367441e2b61d02721e70fb0b9a99}{square\+Action} (int height\+\_\+index, int width\+\_\+index, \hyperlink{class_player}{Player} $\ast$$\ast$currrent\+\_\+turn)
+\begin{DoxyCompactList}\small\item\em checks if just done turn have made current player winnner \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_board_a92d6dbe56e7fc7e96633c80a505a12b3}{draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const 
+\begin{DoxyCompactList}\small\item\em draws all squares. this is used after all seting what to hilight, mark, ect \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_square}{Square} $\ast$$\ast$ \hyperlink{class_board_aae4209ee856592868709d92081368777}{board\+\_\+array}
+\begin{DoxyCompactList}\small\item\em pointer to dynamic allocated array of squares. deletes in destructor \end{DoxyCompactList}\item 
+int \hyperlink{class_board_aa0cb8de0254520dc08dab5796643c8e5}{height}
+\begin{DoxyCompactList}\small\item\em height of the dynamic array of squares \end{DoxyCompactList}\item 
+int \hyperlink{class_board_a90a8efaa4736af25511ac948bdd27d6c}{width}
+\begin{DoxyCompactList}\small\item\em width of the dynamic array of squares \end{DoxyCompactList}\item 
+sf\+::\+Vector2i $\ast$ \hyperlink{class_board_a70eb26b4e2928c9eb58f9072380ced54}{mouse}
+\begin{DoxyCompactList}\small\item\em pointer to mouse var from \hyperlink{class_engine}{Engine} \end{DoxyCompactList}\item 
+sf\+::\+Texture \hyperlink{class_board_a34d04abd4e0c5212e5a32cdd39263298}{texture}
+\begin{DoxyCompactList}\small\item\em basic evry single square texture \end{DoxyCompactList}\item 
+bool $\ast$ \hyperlink{class_board_adbf08097362eabd4621b777261c2e4d7}{clicked}
+\begin{DoxyCompactList}\small\item\em pointer to var witch says if \end{DoxyCompactList}\item 
+\hyperlink{class_square}{Square} $\ast$ \hyperlink{class_board_a27c871bcf6b8eb8bb8af2f28a4c7a909}{mouse\+\_\+hilighting}
+\begin{DoxyCompactList}\small\item\em pointer to square on which mouse is on highlight \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_engine}{Engine} class. Class which manage main loop of game, reads keyboard events, update physics. This class will menage menu and settings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_board_a9ee491d4fea680cf69b033374a9fdfcb}{}\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{Board}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_board_a9ee491d4fea680cf69b033374a9fdfcb}
+
+
+pointers to null . vars to 0. \hyperlink{class_board}{Board} useless until initialized with init(...) 
+
+\hypertarget{class_board_af98d75fee5ec0d1fc87a41a64a2dea91}{}\index{Board@{Board}!Board@{Board}}
+\index{Board@{Board}!Board@{Board}}
+\subsubsection[{Board}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::\+Board (
+\begin{DoxyParamCaption}
+\item[{int}]{height\+\_\+in, }
+\item[{int}]{width\+\_\+in, }
+\item[{sf\+::\+Vector2i $\ast$}]{mouse\+\_\+in}
+\end{DoxyParamCaption}
+)}\label{class_board_af98d75fee5ec0d1fc87a41a64a2dea91}
+
+
+inits board sets size and mouse var allocates dynamic array of squares (runs init function). 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_af98d75fee5ec0d1fc87a41a64a2dea91_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_board_af73f45730119a1fd8f6670f53f959e68}{}\index{Board@{Board}!````~Board@{$\sim$\+Board}}
+\index{````~Board@{$\sim$\+Board}!Board@{Board}}
+\subsubsection[{$\sim$\+Board}]{\setlength{\rightskip}{0pt plus 5cm}Board\+::$\sim$\+Board (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_board_af73f45730119a1fd8f6670f53f959e68}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_board_a4f79d2766626e4167c2b65a43f051545}{}\index{Board@{Board}!check\+Win@{check\+Win}}
+\index{check\+Win@{check\+Win}!Board@{Board}}
+\subsubsection[{check\+Win}]{\setlength{\rightskip}{0pt plus 5cm}bool Board\+::check\+Win (
+\begin{DoxyParamCaption}
+\item[{int}]{height\+\_\+index, }
+\item[{int}]{width\+\_\+index, }
+\item[{{\bf Player} $\ast$$\ast$}]{current\+\_\+turn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_a4f79d2766626e4167c2b65a43f051545}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a4f79d2766626e4167c2b65a43f051545_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_board_a92d6dbe56e7fc7e96633c80a505a12b3}{}\index{Board@{Board}!draw@{draw}}
+\index{draw@{draw}!Board@{Board}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Board\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Target \&}]{target, }
+\item[{sf\+::\+Render\+States}]{states}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_board_a92d6dbe56e7fc7e96633c80a505a12b3}
+
+
+draws all squares. this is used after all seting what to hilight, mark, ect 
+
+\hypertarget{class_board_a7bb620341249cac1e5366e4fe0c91135}{}\index{Board@{Board}!init@{init}}
+\index{init@{init}!Board@{Board}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Board\+::init (
+\begin{DoxyParamCaption}
+\item[{int}]{height\+\_\+in, }
+\item[{int}]{width\+\_\+in, }
+\item[{sf\+::\+Vector2i $\ast$}]{mouse\+\_\+in}
+\end{DoxyParamCaption}
+)}\label{class_board_a7bb620341249cac1e5366e4fe0c91135}
+
+
+inits board sets size and mouse var 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=279pt]{class_board_a7bb620341249cac1e5366e4fe0c91135_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a7bb620341249cac1e5366e4fe0c91135_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_board_a204e367441e2b61d02721e70fb0b9a99}{}\index{Board@{Board}!square\+Action@{square\+Action}}
+\index{square\+Action@{square\+Action}!Board@{Board}}
+\subsubsection[{square\+Action}]{\setlength{\rightskip}{0pt plus 5cm}bool Board\+::square\+Action (
+\begin{DoxyParamCaption}
+\item[{int}]{height\+\_\+index, }
+\item[{int}]{width\+\_\+index, }
+\item[{{\bf Player} $\ast$$\ast$}]{currrent\+\_\+turn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_a204e367441e2b61d02721e70fb0b9a99}
+
+
+checks if just done turn have made current player winnner 
+
+action of single square Player$\ast$$\ast$ is a pointer to current players turn from \hyperlink{class_engine}{Engine} class !!!! Tododododo have to fix that 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a204e367441e2b61d02721e70fb0b9a99_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a204e367441e2b61d02721e70fb0b9a99_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_board_a05f30f65527fdbfe4950040f2e44da6f}{}\index{Board@{Board}!update@{update}}
+\index{update@{update}!Board@{Board}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}bool Board\+::update (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{marked\+\_\+in, }
+\item[{{\bf Player} $\ast$$\ast$}]{currrent\+\_\+turn}
+\end{DoxyParamCaption}
+)}\label{class_board_a05f30f65527fdbfe4950040f2e44da6f}
+
+
+updates board highlight squares (pointlesss setting Player$\ast$$\ast$ doing in evry loop -\/ move to init)-\/ pointer remember pointer ids pointing to. 
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a05f30f65527fdbfe4950040f2e44da6f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_board_a05f30f65527fdbfe4950040f2e44da6f_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_board_aae4209ee856592868709d92081368777}{}\index{Board@{Board}!board\+\_\+array@{board\+\_\+array}}
+\index{board\+\_\+array@{board\+\_\+array}!Board@{Board}}
+\subsubsection[{board\+\_\+array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square}$\ast$$\ast$ Board\+::board\+\_\+array\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_aae4209ee856592868709d92081368777}
+
+
+pointer to dynamic allocated array of squares. deletes in destructor 
+
+\hypertarget{class_board_adbf08097362eabd4621b777261c2e4d7}{}\index{Board@{Board}!clicked@{clicked}}
+\index{clicked@{clicked}!Board@{Board}}
+\subsubsection[{clicked}]{\setlength{\rightskip}{0pt plus 5cm}bool$\ast$ Board\+::clicked\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_adbf08097362eabd4621b777261c2e4d7}
+
+
+pointer to var witch says if 
+
+\hypertarget{class_board_aa0cb8de0254520dc08dab5796643c8e5}{}\index{Board@{Board}!height@{height}}
+\index{height@{height}!Board@{Board}}
+\subsubsection[{height}]{\setlength{\rightskip}{0pt plus 5cm}int Board\+::height\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_aa0cb8de0254520dc08dab5796643c8e5}
+
+
+height of the dynamic array of squares 
+
+\hypertarget{class_board_a70eb26b4e2928c9eb58f9072380ced54}{}\index{Board@{Board}!mouse@{mouse}}
+\index{mouse@{mouse}!Board@{Board}}
+\subsubsection[{mouse}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2i$\ast$ Board\+::mouse\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_a70eb26b4e2928c9eb58f9072380ced54}
+
+
+pointer to mouse var from \hyperlink{class_engine}{Engine} 
+
+\hypertarget{class_board_a27c871bcf6b8eb8bb8af2f28a4c7a909}{}\index{Board@{Board}!mouse\+\_\+hilighting@{mouse\+\_\+hilighting}}
+\index{mouse\+\_\+hilighting@{mouse\+\_\+hilighting}!Board@{Board}}
+\subsubsection[{mouse\+\_\+hilighting}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Square}$\ast$ Board\+::mouse\+\_\+hilighting\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_a27c871bcf6b8eb8bb8af2f28a4c7a909}
+
+
+pointer to square on which mouse is on highlight 
+
+\hypertarget{class_board_a34d04abd4e0c5212e5a32cdd39263298}{}\index{Board@{Board}!texture@{texture}}
+\index{texture@{texture}!Board@{Board}}
+\subsubsection[{texture}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Board\+::texture\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_a34d04abd4e0c5212e5a32cdd39263298}
+
+
+basic evry single square texture 
+
+\hypertarget{class_board_a90a8efaa4736af25511ac948bdd27d6c}{}\index{Board@{Board}!width@{width}}
+\index{width@{width}!Board@{Board}}
+\subsubsection[{width}]{\setlength{\rightskip}{0pt plus 5cm}int Board\+::width\hspace{0.3cm}{\ttfamily [private]}}\label{class_board_a90a8efaa4736af25511ac948bdd27d6c}
+
+
+width of the dynamic array of squares 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_board_8h}{Board.\+h}\item 
+\hyperlink{_board_8cpp}{Board.\+cpp}\end{DoxyCompactItemize}

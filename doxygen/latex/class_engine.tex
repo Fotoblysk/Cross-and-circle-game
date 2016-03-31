@@ -1,0 +1,299 @@
+\hypertarget{class_engine}{}\section{Engine Class Reference}
+\label{class_engine}\index{Engine@{Engine}}
+
+
+\hyperlink{class_engine}{Engine} class. Class which manage main loop of game, reads keyboard events, update physics. This class will menage menu and settings.  
+
+
+
+
+{\ttfamily \#include $<$Engine.\+h$>$}
+
+
+
+Collaboration diagram for Engine\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_engine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_engine_1_1cpp}{cpp}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{Engine} ()
+\begin{DoxyCompactList}\small\item\em sets vars to neutral state, pointers to N\+U\+L\+L \end{DoxyCompactList}\item 
+virtual \hyperlink{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}{$\sim$\+Engine} ()
+\begin{DoxyCompactList}\small\item\em only debug msg \end{DoxyCompactList}\item 
+void \hyperlink{class_engine_af4a62564ef402b7b5a8d880f05d5b120}{init} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em initialization of \hyperlink{class_engine}{Engine}, sets player textures \end{DoxyCompactList}\item 
+void \hyperlink{class_engine_aaa07c6646868b4f752fbb91c3ec5380c}{update} (sf\+::\+Render\+Window \&window)
+\item 
+void \hyperlink{class_engine_a5c3c086eeec69ae6780eb0ffb5a9848e}{events} (sf\+::\+Render\+Window \&window, sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em updates physics of the game, draws board. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_engine_ac34480273d578527e8380758817e7bee}{get\+Mouse\+Position} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em gets global mouse position \end{DoxyCompactList}\item 
+void \hyperlink{class_engine_af4b44a2dd17e35dfc5bb21917508627b}{keyboard\+Events} (sf\+::\+Render\+Window \&window, sf\+::\+Event \&event)
+\begin{DoxyCompactList}\small\item\em reads keyboard events \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_board}{Board} \hyperlink{class_engine_aab263540a0e814e6304a3ef6b751b097}{board}
+\item 
+sf\+::\+Vector2i \hyperlink{class_engine_a6da5d0a63da9f898192b2030b754065f}{mouse}
+\begin{DoxyCompactList}\small\item\em contains dynamicly allocated array of squares \end{DoxyCompactList}\item 
+\hyperlink{class_player}{Player} \hyperlink{class_engine_a2fd7bb89b1be2ea2a33e90e4d0699ffc}{players} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em current mouse position \end{DoxyCompactList}\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_engine_a747d5223870d541667213e307cc34d04}{turn}
+\begin{DoxyCompactList}\small\item\em pointer to \hyperlink{class_player}{Player} whose turn it is \end{DoxyCompactList}\item 
+int \hyperlink{class_engine_a663054b19f734fa167305abf546d8151}{player\+\_\+number}
+\begin{DoxyCompactList}\small\item\em To fix . \end{DoxyCompactList}\item 
+int \hyperlink{class_engine_a7c9d0480379dfdf9eafaf3344d076e4d}{number\+\_\+of\+\_\+players}
+\begin{DoxyCompactList}\small\item\em number of players \end{DoxyCompactList}\item 
+bool \hyperlink{class_engine_a9c9336f739cd336a1346a17504857a45}{clicked}
+\begin{DoxyCompactList}\small\item\em var if lmouse button was clicked true else false \end{DoxyCompactList}\item 
+bool \hyperlink{class_engine_a7dbc1e409179b77add60013155b684a0}{last\+\_\+turn\+\_\+was\+\_\+succesfull}
+\begin{DoxyCompactList}\small\item\em true if last turn was successful (no illegal action like marking already marked square) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_engine}{Engine} class. Class which manage main loop of game, reads keyboard events, update physics. This class will menage menu and settings. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}{}\index{Engine@{Engine}!Engine@{Engine}}
+\index{Engine@{Engine}!Engine@{Engine}}
+\subsubsection[{Engine}]{\setlength{\rightskip}{0pt plus 5cm}Engine\+::\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_engine_a8c98683b0a3aa28d8ab72a8bcd0d52f2}
+
+
+sets vars to neutral state, pointers to N\+U\+L\+L 
+
+\hypertarget{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}{}\index{Engine@{Engine}!````~Engine@{$\sim$\+Engine}}
+\index{````~Engine@{$\sim$\+Engine}!Engine@{Engine}}
+\subsubsection[{$\sim$\+Engine}]{\setlength{\rightskip}{0pt plus 5cm}Engine\+::$\sim$\+Engine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_engine_a8ef7030a089ecb30bbfcb9e43094717a}
+
+
+only debug msg 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_engine_a5c3c086eeec69ae6780eb0ffb5a9848e}{}\index{Engine@{Engine}!events@{events}}
+\index{events@{events}!Engine@{Engine}}
+\subsubsection[{events}]{\setlength{\rightskip}{0pt plus 5cm}void Engine\+::events (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)}\label{class_engine_a5c3c086eeec69ae6780eb0ffb5a9848e}
+
+
+updates physics of the game, draws board. 
+
+reads events all 
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_engine_a5c3c086eeec69ae6780eb0ffb5a9848e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_a5c3c086eeec69ae6780eb0ffb5a9848e_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_engine_ac34480273d578527e8380758817e7bee}{}\index{Engine@{Engine}!get\+Mouse\+Position@{get\+Mouse\+Position}}
+\index{get\+Mouse\+Position@{get\+Mouse\+Position}!Engine@{Engine}}
+\subsubsection[{get\+Mouse\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Engine\+::get\+Mouse\+Position (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_ac34480273d578527e8380758817e7bee}
+
+
+gets global mouse position 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_ac34480273d578527e8380758817e7bee_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_engine_af4a62564ef402b7b5a8d880f05d5b120}{}\index{Engine@{Engine}!init@{init}}
+\index{init@{init}!Engine@{Engine}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void Engine\+::init (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}\label{class_engine_af4a62564ef402b7b5a8d880f05d5b120}
+
+
+initialization of \hyperlink{class_engine}{Engine}, sets player textures 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_af4a62564ef402b7b5a8d880f05d5b120_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_af4a62564ef402b7b5a8d880f05d5b120_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_engine_af4b44a2dd17e35dfc5bb21917508627b}{}\index{Engine@{Engine}!keyboard\+Events@{keyboard\+Events}}
+\index{keyboard\+Events@{keyboard\+Events}!Engine@{Engine}}
+\subsubsection[{keyboard\+Events}]{\setlength{\rightskip}{0pt plus 5cm}void Engine\+::keyboard\+Events (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window, }
+\item[{sf\+::\+Event \&}]{event}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_af4b44a2dd17e35dfc5bb21917508627b}
+
+
+reads keyboard events 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_af4b44a2dd17e35dfc5bb21917508627b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_engine_aaa07c6646868b4f752fbb91c3ec5380c}{}\index{Engine@{Engine}!update@{update}}
+\index{update@{update}!Engine@{Engine}}
+\subsubsection[{update}]{\setlength{\rightskip}{0pt plus 5cm}void Engine\+::update (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Window \&}]{window}
+\end{DoxyParamCaption}
+)}\label{class_engine_aaa07c6646868b4f752fbb91c3ec5380c}
+unfortunatlly changes when there were player turn failed 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_aaa07c6646868b4f752fbb91c3ec5380c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_engine_aaa07c6646868b4f752fbb91c3ec5380c_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_engine_aab263540a0e814e6304a3ef6b751b097}{}\index{Engine@{Engine}!board@{board}}
+\index{board@{board}!Engine@{Engine}}
+\subsubsection[{board}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Board} Engine\+::board\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_aab263540a0e814e6304a3ef6b751b097}
+\hypertarget{class_engine_a9c9336f739cd336a1346a17504857a45}{}\index{Engine@{Engine}!clicked@{clicked}}
+\index{clicked@{clicked}!Engine@{Engine}}
+\subsubsection[{clicked}]{\setlength{\rightskip}{0pt plus 5cm}bool Engine\+::clicked\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a9c9336f739cd336a1346a17504857a45}
+
+
+var if lmouse button was clicked true else false 
+
+\hypertarget{class_engine_a7dbc1e409179b77add60013155b684a0}{}\index{Engine@{Engine}!last\+\_\+turn\+\_\+was\+\_\+succesfull@{last\+\_\+turn\+\_\+was\+\_\+succesfull}}
+\index{last\+\_\+turn\+\_\+was\+\_\+succesfull@{last\+\_\+turn\+\_\+was\+\_\+succesfull}!Engine@{Engine}}
+\subsubsection[{last\+\_\+turn\+\_\+was\+\_\+succesfull}]{\setlength{\rightskip}{0pt plus 5cm}bool Engine\+::last\+\_\+turn\+\_\+was\+\_\+succesfull\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a7dbc1e409179b77add60013155b684a0}
+
+
+true if last turn was successful (no illegal action like marking already marked square) 
+
+\hypertarget{class_engine_a6da5d0a63da9f898192b2030b754065f}{}\index{Engine@{Engine}!mouse@{mouse}}
+\index{mouse@{mouse}!Engine@{Engine}}
+\subsubsection[{mouse}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Vector2i Engine\+::mouse\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a6da5d0a63da9f898192b2030b754065f}
+
+
+contains dynamicly allocated array of squares 
+
+\hypertarget{class_engine_a7c9d0480379dfdf9eafaf3344d076e4d}{}\index{Engine@{Engine}!number\+\_\+of\+\_\+players@{number\+\_\+of\+\_\+players}}
+\index{number\+\_\+of\+\_\+players@{number\+\_\+of\+\_\+players}!Engine@{Engine}}
+\subsubsection[{number\+\_\+of\+\_\+players}]{\setlength{\rightskip}{0pt plus 5cm}int Engine\+::number\+\_\+of\+\_\+players\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a7c9d0480379dfdf9eafaf3344d076e4d}
+
+
+number of players 
+
+\hypertarget{class_engine_a663054b19f734fa167305abf546d8151}{}\index{Engine@{Engine}!player\+\_\+number@{player\+\_\+number}}
+\index{player\+\_\+number@{player\+\_\+number}!Engine@{Engine}}
+\subsubsection[{player\+\_\+number}]{\setlength{\rightskip}{0pt plus 5cm}int Engine\+::player\+\_\+number\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a663054b19f734fa167305abf546d8151}
+
+
+To fix . 
+
+\hypertarget{class_engine_a2fd7bb89b1be2ea2a33e90e4d0699ffc}{}\index{Engine@{Engine}!players@{players}}
+\index{players@{players}!Engine@{Engine}}
+\subsubsection[{players}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} Engine\+::players\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a2fd7bb89b1be2ea2a33e90e4d0699ffc}
+
+
+current mouse position 
+
+just for tests array of players \hypertarget{class_engine_a747d5223870d541667213e307cc34d04}{}\index{Engine@{Engine}!turn@{turn}}
+\index{turn@{turn}!Engine@{Engine}}
+\subsubsection[{turn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}$\ast$ Engine\+::turn\hspace{0.3cm}{\ttfamily [private]}}\label{class_engine_a747d5223870d541667213e307cc34d04}
+
+
+pointer to \hyperlink{class_player}{Player} whose turn it is 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_engine_8h}{Engine.\+h}\item 
+\hyperlink{_engine_8cpp}{Engine.\+cpp}\end{DoxyCompactItemize}

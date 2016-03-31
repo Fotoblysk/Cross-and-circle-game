@@ -1,0 +1,247 @@
+\hypertarget{class_square}{}\section{Square Class Reference}
+\label{class_square}\index{Square@{Square}}
+
+
+\hyperlink{class_square}{Square} class. Class which is used to build board this class may be remade to inheritance from sf\+::\+Rectangle\+Shape.  
+
+
+
+
+{\ttfamily \#include $<$Square.\+h$>$}
+
+
+
+Inheritance diagram for Square\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_square__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Square\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_square__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_square_a3dc7ff9aefc2725172b5d3153973d243}{Square} ()
+\begin{DoxyCompactList}\small\item\em sets pointers to N\+U\+L\+L \end{DoxyCompactList}\item 
+virtual \hyperlink{class_square_a90af7ce1060cff7b717ceddb333846b8}{$\sim$\+Square} ()
+\begin{DoxyCompactList}\small\item\em only D\+E\+B\+U\+G M\+S\+G \end{DoxyCompactList}\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_square_ab67268190c292712504e4a6039781423}{get\+Marked\+By} () const 
+\begin{DoxyCompactList}\small\item\em function returning pointer to \hyperlink{class_player}{Player} whose marked this \hyperlink{class_square}{Square}(var -\/ marked\+\_\+by) \end{DoxyCompactList}\item 
+void \hyperlink{class_square_ab425c2f7271014c9d01eff4b0e053b31}{mark} (\hyperlink{class_player}{Player} $\ast$player\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em this is function used by \hyperlink{class_board}{Board} to set \hyperlink{class_square}{Square} marked \end{DoxyCompactList}\item 
+bool \hyperlink{class_square_a0b6ff04d5e7f6349889e989c6c187672}{is\+Marked} () const 
+\begin{DoxyCompactList}\small\item\em returns true if square is marked(to rework) \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_square_a343e5c679cacddf7250f363875518bf9}{draw} (sf\+::\+Render\+Target \&target, sf\+::\+Render\+States states) const 
+\begin{DoxyCompactList}\small\item\em draws sf\+::\+Rectangle\+Shape square \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_square_ad62196a5af085b2cd38df1cc698226c8}{set\+Texture} (sf\+::\+Texture $\ast$\hyperlink{class_square_a9bd6a0eca56aa3075227f56ee54d7808}{texture})
+\begin{DoxyCompactList}\small\item\em This is function used by current class to set \hyperlink{class_square}{Square(and sf\+::\+Rectangle\+Shape)} current texture. \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_square_a719a5dee91eaa87a7128061193388648}{set\+Position} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Sets position of sf\+::\+Rectangle\+Shape square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player}{Player} $\ast$ \hyperlink{class_square_a1304492dc99a6af1f0bf2ab24d97520a}{marked\+\_\+by}
+\begin{DoxyCompactList}\small\item\em variable used to save who marked current \hyperlink{class_square}{Square} \end{DoxyCompactList}\item 
+sf\+::\+Rectangle\+Shape \hyperlink{class_square_a973d093bc18730c9ad2e74f9866af996}{square}
+\begin{DoxyCompactList}\small\item\em Shape from S\+F\+M\+L class. The whole class may inheritance form this class. \end{DoxyCompactList}\item 
+sf\+::\+Texture $\ast$ \hyperlink{class_square_a9bd6a0eca56aa3075227f56ee54d7808}{texture}
+\begin{DoxyCompactList}\small\item\em Pointer to current \hyperlink{class_square}{Square( sf\+::\+Rectangle\+Shape square )} texture. Marking change texture to player texture; this is going to be remade. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_square_a12525b6ed7c8186be0bee5cf78e2a49c}{Board}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_square}{Square} class. Class which is used to build board this class may be remade to inheritance from sf\+::\+Rectangle\+Shape. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_square_a3dc7ff9aefc2725172b5d3153973d243}{}\index{Square@{Square}!Square@{Square}}
+\index{Square@{Square}!Square@{Square}}
+\subsubsection[{Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\+::\+Square (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_square_a3dc7ff9aefc2725172b5d3153973d243}
+
+
+sets pointers to N\+U\+L\+L 
+
+\hypertarget{class_square_a90af7ce1060cff7b717ceddb333846b8}{}\index{Square@{Square}!````~Square@{$\sim$\+Square}}
+\index{````~Square@{$\sim$\+Square}!Square@{Square}}
+\subsubsection[{$\sim$\+Square}]{\setlength{\rightskip}{0pt plus 5cm}Square\+::$\sim$\+Square (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_square_a90af7ce1060cff7b717ceddb333846b8}
+
+
+only D\+E\+B\+U\+G M\+S\+G 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_square_a343e5c679cacddf7250f363875518bf9}{}\index{Square@{Square}!draw@{draw}}
+\index{draw@{draw}!Square@{Square}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::draw (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Render\+Target \&}]{target, }
+\item[{sf\+::\+Render\+States}]{states}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_square_a343e5c679cacddf7250f363875518bf9}
+
+
+draws sf\+::\+Rectangle\+Shape square 
+
+\hypertarget{class_square_ab67268190c292712504e4a6039781423}{}\index{Square@{Square}!get\+Marked\+By@{get\+Marked\+By}}
+\index{get\+Marked\+By@{get\+Marked\+By}!Square@{Square}}
+\subsubsection[{get\+Marked\+By}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player} $\ast$ Square\+::get\+Marked\+By (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_square_ab67268190c292712504e4a6039781423}
+
+
+function returning pointer to \hyperlink{class_player}{Player} whose marked this \hyperlink{class_square}{Square}(var -\/ marked\+\_\+by) 
+
+\hypertarget{class_square_a0b6ff04d5e7f6349889e989c6c187672}{}\index{Square@{Square}!is\+Marked@{is\+Marked}}
+\index{is\+Marked@{is\+Marked}!Square@{Square}}
+\subsubsection[{is\+Marked}]{\setlength{\rightskip}{0pt plus 5cm}bool Square\+::is\+Marked (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{class_square_a0b6ff04d5e7f6349889e989c6c187672}
+
+
+returns true if square is marked(to rework) 
+
+\hypertarget{class_square_ab425c2f7271014c9d01eff4b0e053b31}{}\index{Square@{Square}!mark@{mark}}
+\index{mark@{mark}!Square@{Square}}
+\subsubsection[{mark}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::mark (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player\+\_\+ptr}
+\end{DoxyParamCaption}
+)}\label{class_square_ab425c2f7271014c9d01eff4b0e053b31}
+
+
+this is function used by \hyperlink{class_board}{Board} to set \hyperlink{class_square}{Square} marked 
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_square_ab425c2f7271014c9d01eff4b0e053b31_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_square_ab425c2f7271014c9d01eff4b0e053b31_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_square_a719a5dee91eaa87a7128061193388648}{}\index{Square@{Square}!set\+Position@{set\+Position}}
+\index{set\+Position@{set\+Position}!Square@{Square}}
+\subsubsection[{set\+Position}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::set\+Position (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [virtual]}}\label{class_square_a719a5dee91eaa87a7128061193388648}
+
+
+Sets position of sf\+::\+Rectangle\+Shape square. 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_square_a719a5dee91eaa87a7128061193388648_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_square_ad62196a5af085b2cd38df1cc698226c8}{}\index{Square@{Square}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Square@{Square}}
+\subsubsection[{set\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}void Square\+::set\+Texture (
+\begin{DoxyParamCaption}
+\item[{sf\+::\+Texture $\ast$}]{texture}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{class_square_ad62196a5af085b2cd38df1cc698226c8}
+
+
+This is function used by current class to set \hyperlink{class_square}{Square(and sf\+::\+Rectangle\+Shape)} current texture. 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_square_ad62196a5af085b2cd38df1cc698226c8_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_square_a12525b6ed7c8186be0bee5cf78e2a49c}{}\index{Square@{Square}!Board@{Board}}
+\index{Board@{Board}!Square@{Square}}
+\subsubsection[{Board}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf Board}\hspace{0.3cm}{\ttfamily [friend]}}\label{class_square_a12525b6ed7c8186be0bee5cf78e2a49c}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_square_a1304492dc99a6af1f0bf2ab24d97520a}{}\index{Square@{Square}!marked\+\_\+by@{marked\+\_\+by}}
+\index{marked\+\_\+by@{marked\+\_\+by}!Square@{Square}}
+\subsubsection[{marked\+\_\+by}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Player}$\ast$ Square\+::marked\+\_\+by\hspace{0.3cm}{\ttfamily [private]}}\label{class_square_a1304492dc99a6af1f0bf2ab24d97520a}
+
+
+variable used to save who marked current \hyperlink{class_square}{Square} 
+
+\hypertarget{class_square_a973d093bc18730c9ad2e74f9866af996}{}\index{Square@{Square}!square@{square}}
+\index{square@{square}!Square@{Square}}
+\subsubsection[{square}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Rectangle\+Shape Square\+::square\hspace{0.3cm}{\ttfamily [private]}}\label{class_square_a973d093bc18730c9ad2e74f9866af996}
+
+
+Shape from S\+F\+M\+L class. The whole class may inheritance form this class. 
+
+\hypertarget{class_square_a9bd6a0eca56aa3075227f56ee54d7808}{}\index{Square@{Square}!texture@{texture}}
+\index{texture@{texture}!Square@{Square}}
+\subsubsection[{texture}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture$\ast$ Square\+::texture\hspace{0.3cm}{\ttfamily [private]}}\label{class_square_a9bd6a0eca56aa3075227f56ee54d7808}
+
+
+Pointer to current \hyperlink{class_square}{Square( sf\+::\+Rectangle\+Shape square )} texture. Marking change texture to player texture; this is going to be remade. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_square_8h}{Square.\+h}\item 
+\hyperlink{_square_8cpp}{Square.\+cpp}\end{DoxyCompactItemize}

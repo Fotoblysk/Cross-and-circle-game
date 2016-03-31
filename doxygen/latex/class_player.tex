@@ -1,0 +1,129 @@
+\hypertarget{class_player}{}\section{Player Class Reference}
+\label{class_player}\index{Player@{Player}}
+
+
+\hyperlink{class_player}{Player} class -\/ pointers to player have a lot of usage in program. All Squares have pointer to player which were marked by pointers to players are also used by \hyperlink{class_engine}{Engine} class to set whose turn is now.  
+
+
+
+
+{\ttfamily \#include $<$Player.\+h$>$}
+
+
+
+Collaboration diagram for Player\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_player__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{Player} ()
+\begin{DoxyCompactList}\small\item\em empty constructor \end{DoxyCompactList}\item 
+virtual \hyperlink{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{$\sim$\+Player} ()
+\begin{DoxyCompactList}\small\item\em empty destructor only msg \end{DoxyCompactList}\item 
+void \hyperlink{class_player_ac2412646697fb7738a5d0c3aeb16ba94}{set\+Texture} (char $\ast$file\+Dir)
+\begin{DoxyCompactList}\small\item\em function setting player texture (initialization staff) \end{DoxyCompactList}\item 
+sf\+::\+Texture $\ast$ \hyperlink{class_player_a72e351147bd2bb48bdea9ba74dcc7f81}{get\+Texture\+Ptr} ()
+\begin{DoxyCompactList}\small\item\em returns pointer to current player texture (texture\+\_\+marked) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Texture \hyperlink{class_player_a9e50410dd4405082cc4374126e813a95}{texture\+\_\+marked}
+\begin{DoxyCompactList}\small\item\em texture to draw when a player marked square. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_player}{Player} class -\/ pointers to player have a lot of usage in program. All Squares have pointer to player which were marked by pointers to players are also used by \hyperlink{class_engine}{Engine} class to set whose turn is now. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}{}\index{Player@{Player}!Player@{Player}}
+\index{Player@{Player}!Player@{Player}}
+\subsubsection[{Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_affe0cc3cb714f6deb4e62f0c0d3f1fd8}
+
+
+empty constructor 
+
+\hypertarget{class_player_a749d2c00e1fe0f5c2746f7505a58c062}{}\index{Player@{Player}!````~Player@{$\sim$\+Player}}
+\index{````~Player@{$\sim$\+Player}!Player@{Player}}
+\subsubsection[{$\sim$\+Player}]{\setlength{\rightskip}{0pt plus 5cm}Player\+::$\sim$\+Player (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_player_a749d2c00e1fe0f5c2746f7505a58c062}
+
+
+empty destructor only msg 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_player_a72e351147bd2bb48bdea9ba74dcc7f81}{}\index{Player@{Player}!get\+Texture\+Ptr@{get\+Texture\+Ptr}}
+\index{get\+Texture\+Ptr@{get\+Texture\+Ptr}!Player@{Player}}
+\subsubsection[{get\+Texture\+Ptr}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture $\ast$ Player\+::get\+Texture\+Ptr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_player_a72e351147bd2bb48bdea9ba74dcc7f81}
+
+
+returns pointer to current player texture (texture\+\_\+marked) 
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_a72e351147bd2bb48bdea9ba74dcc7f81_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_player_ac2412646697fb7738a5d0c3aeb16ba94}{}\index{Player@{Player}!set\+Texture@{set\+Texture}}
+\index{set\+Texture@{set\+Texture}!Player@{Player}}
+\subsubsection[{set\+Texture}]{\setlength{\rightskip}{0pt plus 5cm}void Player\+::set\+Texture (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{file\+Dir}
+\end{DoxyParamCaption}
+)}\label{class_player_ac2412646697fb7738a5d0c3aeb16ba94}
+
+
+function setting player texture (initialization staff) 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_ac2412646697fb7738a5d0c3aeb16ba94_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_player_a9e50410dd4405082cc4374126e813a95}{}\index{Player@{Player}!texture\+\_\+marked@{texture\+\_\+marked}}
+\index{texture\+\_\+marked@{texture\+\_\+marked}!Player@{Player}}
+\subsubsection[{texture\+\_\+marked}]{\setlength{\rightskip}{0pt plus 5cm}sf\+::\+Texture Player\+::texture\+\_\+marked\hspace{0.3cm}{\ttfamily [private]}}\label{class_player_a9e50410dd4405082cc4374126e813a95}
+
+
+texture to draw when a player marked square. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_player_8h}{Player.\+h}\item 
+\hyperlink{_player_8cpp}{Player.\+cpp}\end{DoxyCompactItemize}

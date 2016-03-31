@@ -35,7 +35,6 @@
 */
 int main()
 {
-    int lol;
     sf::RenderWindow window(sf::VideoMode(500,500), "SFML window", sf::Style::Fullscreen );
     Game game(window);
     return 0;

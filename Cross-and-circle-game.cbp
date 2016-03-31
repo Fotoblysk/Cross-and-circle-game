@@ -50,6 +50,7 @@
 		<Linker>
 			<Add directory="../SFML-2.3.2/lib" />
 		</Linker>
+		<Unit filename="debugging_tolls.h" />
 		<Unit filename="include/Board.h" />
 		<Unit filename="include/Engine.h" />
 		<Unit filename="include/Game.h" />

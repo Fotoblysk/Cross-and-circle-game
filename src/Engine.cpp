@@ -28,7 +28,7 @@ void Engine::getMousePosition(sf::RenderWindow& window){
 }
 void Engine::update(sf::RenderWindow& window){
     getMousePosition(window);
-    last_turn_was_succesfull=board.update(&clicked,&turn);
+    last_turn_was_succesfull=board.update(&clicked,turn);
     if(clicked)
     {
         if(last_turn_was_succesfull)// 2 circles in first turn

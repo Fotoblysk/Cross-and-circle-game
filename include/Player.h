@@ -2,14 +2,7 @@
 #define PLAYER_H
 #include<iostream>
 #include<SFML/Graphics.hpp>
-
-//#define NDEBUG
-#ifndef NDEBUG
-    #define DEBUG_MSG(str) do { std::cout << str;} while( false )
-#else
-    #define DEBUG_MSG(str) ((void)0)
-#endif
-
+#include<../debugging_tolls.h>
 /*!
  * \brief Player class - pointers to player have a lot of usage in program.
  * All Squares have pointer to player which  were marked by

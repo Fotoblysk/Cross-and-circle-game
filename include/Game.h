@@ -1,6 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 #include "Engine.h"
+#include<../debugging_tolls.h>
 /*!
  * \brief Game main class. Class which is used run engine.
  * This class will menage menu and settings

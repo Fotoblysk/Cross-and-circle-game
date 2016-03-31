@@ -1,6 +1,5 @@
 #include "Board.h"
 #include<iostream>
-#include<assert.h>
 Board::Board(){
     //ctor
     clicked=NULL;
@@ -52,7 +51,7 @@ void Board::draw(sf::RenderTarget &target, sf::RenderStates states) const{
             target.draw(board_array[height_index][width_index]);
     }
 }
-bool Board::update(bool* clicked_in,Player** currrent_turn) {
+bool Board::update(bool* clicked_in,Player* currrent_turn) {
     bool havent_any_failed=true;
     clicked=clicked_in;
     for(int height_index=0;height_index<height;height_index++)
@@ -63,7 +62,7 @@ bool Board::update(bool* clicked_in,Player** currrent_turn) {
     }
     return havent_any_failed;
 }
-bool Board::squareAction(int height_index, int width_index, Player** currrent_turn){
+bool Board::squareAction(int height_index, int width_index, Player* currrent_turn){
     if(board_array[height_index][width_index].square.getGlobalBounds().contains(mouse->x,mouse->y))
     {
         if(!board_array[height_index][width_index].isMarked()){ // marking and hillighting only fr ummarked squares
@@ -71,8 +70,8 @@ bool Board::squareAction(int height_index, int width_index, Player** currrent_tu
             if(board_array[height_index][width_index].square.getFillColor()!=sf::Color::Yellow)
                 mouse_hilighting->square.setFillColor(sf::Color::Yellow);
             if(clicked&&*clicked)
-                {   /// !!!! Tododododo have to  fix that
-                mouse_hilighting->mark(*currrent_turn);
+                {   //TODO(FOTO#5#) have to  fix that
+                mouse_hilighting->mark(currrent_turn);
                 checkWin( height_index, width_index, currrent_turn);
                     //now engine turns off clicked boolean :)
                 }
@@ -83,15 +82,15 @@ bool Board::squareAction(int height_index, int width_index, Player** currrent_tu
         board_array[height_index][width_index].square.setFillColor(sf::Color::White);
     return true;
 }
-bool Board::checkWin(int height_index,int width_index,Player** currrent_turn){
+bool Board::checkWin(int height_index,int width_index,Player* currrent_turn){
     /////////
     int counter=1;
     int i=1;
-    assert(currrent_turn!=NULL&&*currrent_turn!=NULL);
-    while(height_index+i<HEIGHT&&board_array[height_index+i++][width_index].getMarkedBy()==*currrent_turn)
+    assert(currrent_turn!=NULL);
+    while(height_index+i<HEIGHT&&board_array[height_index+i++][width_index].getMarkedBy()==currrent_turn)
         counter++;
     i=1;
-    while(height_index-i>=0&&board_array[height_index-i++][width_index].getMarkedBy()==*currrent_turn)
+    while(height_index-i>=0&&board_array[height_index-i++][width_index].getMarkedBy()==currrent_turn)
         counter++;
     if(counter>=IN_A_ROW_TO_WIN)
         {
@@ -104,10 +103,10 @@ bool Board::checkWin(int height_index,int width_index,Player** currrent_turn){
     ///////////////////////
     counter=1;
     i=1;
-    while(width_index+i<WIDTH&&board_array[height_index][width_index+i++].getMarkedBy()==*currrent_turn)
+    while(width_index+i<WIDTH&&board_array[height_index][width_index+i++].getMarkedBy()==currrent_turn)
         counter++;
     i=1;
-    while(width_index-i>=0&&board_array[height_index][width_index-i++].getMarkedBy()==*currrent_turn)
+    while(width_index-i>=0&&board_array[height_index][width_index-i++].getMarkedBy()==currrent_turn)
         counter++;
     if(counter>=IN_A_ROW_TO_WIN)
     {
@@ -120,10 +119,10 @@ bool Board::checkWin(int height_index,int width_index,Player** currrent_turn){
     ///////////////////////
     counter=1;
     i=1;
-    while(width_index+i<WIDTH&&height_index+i<HEIGHT&&board_array[height_index+i][width_index+i++].getMarkedBy()==*currrent_turn)
+    while(width_index+i<WIDTH&&height_index+i<HEIGHT&&board_array[height_index+i][width_index+i++].getMarkedBy()==currrent_turn)
         counter++;
     i=1;
-    while(width_index-i>=0&&height_index-i>=0&&board_array[height_index-i][width_index-i++].getMarkedBy()==*currrent_turn)
+    while(width_index-i>=0&&height_index-i>=0&&board_array[height_index-i][width_index-i++].getMarkedBy()==currrent_turn)
         counter++;
     if(counter>=IN_A_ROW_TO_WIN)
         {
@@ -135,10 +134,10 @@ bool Board::checkWin(int height_index,int width_index,Player** currrent_turn){
     ///////////////////////
     counter=1;
     i=1;
-    while(width_index-i>=0&&height_index+i<HEIGHT&&board_array[height_index+i][width_index-i++].getMarkedBy()==*currrent_turn)
+    while(width_index-i>=0&&height_index+i<HEIGHT&&board_array[height_index+i][width_index-i++].getMarkedBy()==currrent_turn)
         counter++;
     i=1;
-    while(width_index+i<WIDTH&&height_index-i>=0&&board_array[height_index-i][width_index+i++].getMarkedBy()==*currrent_turn)
+    while(width_index+i<WIDTH&&height_index-i>=0&&board_array[height_index-i][width_index+i++].getMarkedBy()==currrent_turn)
         counter++;
     if(counter>=IN_A_ROW_TO_WIN)
     {

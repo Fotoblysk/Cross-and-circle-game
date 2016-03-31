@@ -6,12 +6,8 @@
 #include "Player.h"
 #define SQUARE_SIZE 50
 
-//#define NDEBUG
-#ifndef NDEBUG
-    #define DEBUG_MSG(str) do { std::cout << str;} while( false )
-#else
-    #define DEBUG_MSG(str) ((void)0)
-#endif
+#include<../debugging_tolls.h>
+
 
 
 /*!
@@ -31,10 +27,11 @@ class Square : public sf::Drawable, sf::Transformable
     protected:
 
     private:
-        void setTexture( sf::Texture *texture);                      ///<This is function used by current class to set Square(and sf::RectangleShape) current texture.
+        void setTexture( sf::Texture *texture);                     ///<This is function used by current class to set Square(and sf::RectangleShape) current texture.
+        virtual void setPosition(float x, float y);                 ///<Sets position of sf::RectangleShape square.
+
         Player* marked_by;                                          ///<variable used to save who marked current Square
         sf::RectangleShape square;                                  ///< Shape from SFML class. The whole class may inheritance form this class
-        virtual void setPosition(float x, float y);                 ///<Sets position of sf::RectangleShape square.
         sf::Texture* texture;                                       ///<Pointer to current Square( sf::RectangleShape square ) texture. Marking change texture to player texture; this is going to be remade
 };
 

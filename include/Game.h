@@ -10,8 +10,7 @@ class Game
 {
     public:
         Game(sf::RenderWindow& window);     ///< Initialization of RenderWindow& window - main window of the game.
-        virtual ~Game();                    ///< Runs StartGame() function
-
+        virtual ~Game();                       ///< Runs StartGame() function
     protected:
 
     private:

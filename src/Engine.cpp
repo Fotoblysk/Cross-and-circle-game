@@ -17,7 +17,7 @@ bool fullBoardCheck(sf::RenderWindow& window){
     return true;
 }
 void Engine::init(sf::RenderWindow& window){
-    board.init(HEIGHT,WIDTH,&mouse);
+    board.init(HEIGHT,WIDTH,mouse);
     window.draw(board);
     turn=&players[0];
     players[0].setTexture("textures/square_marked_circle.png");
@@ -28,7 +28,7 @@ void Engine::getMousePosition(sf::RenderWindow& window){
 }
 void Engine::update(sf::RenderWindow& window){
     getMousePosition(window);
-    last_turn_was_succesfull=board.update(&clicked,turn);
+    last_turn_was_succesfull=board.update(&clicked,turn,mouse);
     if(clicked)
     {
         if(last_turn_was_succesfull)// 2 circles in first turn

@@ -3,13 +3,13 @@
 Board::Board(){
     //ctor
     clicked=NULL;
-    mouse=NULL;
+    mouse={0,0};
     board_array=NULL;
     height=0;
     width=0;
 }
 
-Board::Board(int height_in, int width_in,sf::Vector2i* mouse_in){
+Board::Board(int height_in, int width_in,sf::Vector2i mouse_in){
     init(height_in, width_in,mouse_in);
 }
 
@@ -23,7 +23,7 @@ Board::~Board(){
 
 }
 
-void Board::init(int height_in, int width_in,sf::Vector2i* mouse_in){
+void Board::init(int height_in, int width_in,sf::Vector2i mouse_in){
     clicked=NULL;
     width=width_in;
     height=height_in;
@@ -51,19 +51,20 @@ void Board::draw(sf::RenderTarget &target, sf::RenderStates states) const{
             target.draw(board_array[height_index][width_index]);
     }
 }
-bool Board::update(bool* clicked_in,Player* currrent_turn) {
+bool Board::update(bool* clicked_in,Player* currrent_turn,sf::Vector2i current_mouse_position) {
     bool havent_any_failed=true;
     clicked=clicked_in;
     for(int height_index=0;height_index<height;height_index++)
     {
         for(int width_index=0;width_index<width;width_index++)
-            if(!squareAction(height_index,width_index,currrent_turn))
+            if(!squareAction(height_index,width_index,currrent_turn,current_mouse_position))
                 havent_any_failed=false;
     }
     return havent_any_failed;
 }
-bool Board::squareAction(int height_index, int width_index, Player* currrent_turn){
-    if(board_array[height_index][width_index].square.getGlobalBounds().contains(mouse->x,mouse->y))
+bool Board::squareAction(int height_index, int width_index, Player* currrent_turn,sf::Vector2i current_mouse_position){
+    mouse=current_mouse_position;
+    if(board_array[height_index][width_index].square.getGlobalBounds().contains(mouse.x,mouse.y))
     {
         if(!board_array[height_index][width_index].isMarked()){ // marking and hillighting only fr ummarked squares
             mouse_hilighting=&(board_array[height_index][width_index]);

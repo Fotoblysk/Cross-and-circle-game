@@ -11,7 +11,7 @@
 class Engine
 {
     public:
-        enum State {Start,Turn,Winner,End};             //TODO(FOTO#5#): LOL use it no exit()
+        enum State {Start,Turn,Winner,End};             //TODO(FOTO#1#): LOL use it no exit()
         Engine();                                       ///<sets vars to neutral state, pointers to NULL
         virtual ~Engine();                              ///<only debug msg
         void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
@@ -29,7 +29,7 @@ class Engine
         bool last_turn_was_succesfull;                  ///< true if last turn was successful (no illegal action like marking already marked square)
         void getMousePosition(sf::RenderWindow& window);                ///< gets global mouse position
         void keyboardEvents(sf::RenderWindow& window,sf::Event& event); ///< reads keyboard events
-        State state;                                    //TODO(FOTO#5#): LOL use it no exit()
+        State state;                                    //TODO(FOTO#1#): LOL use it no exit()
 };
 
 #endif // ENGINE_H

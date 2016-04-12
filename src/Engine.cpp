@@ -3,7 +3,6 @@
 #define HEIGHT 20
 #define WIDTH 30
 Engine::Engine(){
-    last_turn_was_succesfull=true;
     player_number=0;
     clicked=0;
     turn=NULL;
@@ -16,27 +15,40 @@ bool fullBoardCheck(sf::RenderWindow& window){
 
     return true;
 }
-void Engine::init(sf::RenderWindow& window){
+void Engine::init(sf::RenderWindow& window)
+{
+    state=PlayingGame;
     board.init(HEIGHT,WIDTH,mouse);
     window.draw(board);
     turn=&players[0];
     players[0].setTexture("textures/square_marked_circle.png");
     players[1].setTexture("textures/square_marked_cross.png");
+    {
+        const std::string player1Name("Player1");
+        const std::string player2Name("Player2");
+        players[0].setName(player1Name);
+        players[1].setName(player2Name);
+    }
 }
 void Engine::getMousePosition(sf::RenderWindow& window){
     mouse=sf::Mouse::getPosition(window);
 }
 void Engine::update(sf::RenderWindow& window){
     getMousePosition(window);
-    last_turn_was_succesfull=board.update(&clicked,turn,mouse);
+    last_turn_board_state=board.update(clicked,turn,mouse);
     if(clicked)
     {
-        if(last_turn_was_succesfull)// 2 circles in first turn
+        if(last_turn_board_state==Board::NextTurn)
         {
-            turn=&players[(++player_number)%=2]; ///unfortunatlly changes when there were player turn failed
-            DEBUG_MSG("NEXT TURN : player "<<player_number<<std::endl);
+            turn=&players[(++player_number)%=2]; ///unfortunately changes when there were player turn failed
+            DEBUG_MSG("NEXT TURN : "<<turn->toStr()<<std::endl);
         }
         clicked=false;
+        if(last_turn_board_state==Board::Winner)
+        {
+            std::cout<<std::endl<<"Winner is: "<<turn->toStr()<<std::endl;
+            state=EndOfGame;
+        }
     }
     window.draw(board);
 }

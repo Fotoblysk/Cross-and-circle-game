@@ -11,3 +11,9 @@ Player::~Player(){
 sf::Texture* Player::getTexturePtr(){
     return &texture_marked;
 }
+std::string& Player::toStr(){
+    return name;
+}
+void Player::setName(std::string name_in){
+    name=name_in;
+}

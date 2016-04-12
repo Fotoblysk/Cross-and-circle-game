@@ -3,6 +3,7 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
 #include<../debugging_tolls.h>
+#include<string>
 /*!
  * \brief Player class - pointers to player have a lot of usage in program.
  * All Squares have pointer to player which  were marked by
@@ -15,9 +16,12 @@ class Player
         virtual ~Player(); ///< empty destructor only msg
         void setTexture(char* fileDir); ///< function setting player texture (initialization staff)
         sf::Texture* getTexturePtr(); ///<returns pointer to current player texture (texture_marked)
+        std::string& toStr();
+        void setName(std::string);
     protected:
 
     private:
+    std::string name;
     sf::Texture texture_marked; ///< texture to draw when a player marked square.
     //TODO(FOTO#5#): set default texture to be copied from default square texture,  or gonna make that const , get  deafult from square when creating and print circle crosss square on it before creating a player
 

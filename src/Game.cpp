@@ -13,9 +13,8 @@ Game::~Game()
 }
 void Game::startGame(){
     engine.init(window);
-    while (window.isOpen())
+    while (window.isOpen()&&engine.currentState()!=Engine::EndOfGame)
     {
-
         window.clear();
         engine.events(window, event);
         engine.update(window);

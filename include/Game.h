@@ -8,6 +8,7 @@
 */
 class Game
 {
+    enum GameState{Play,Menu, End};
     public:
         Game(sf::RenderWindow& window);     ///< Initialization of RenderWindow& window - main window of the game.
         virtual ~Game();                       ///< Runs StartGame() function
@@ -18,6 +19,16 @@ class Game
         sf::RenderWindow& window;           ///<Main game window
         sf::Event event;                    ///< Event object probably unused
         void startGame();                   ///< Runs engine starts multi player seats switch game.
+        void menu();
+        void menuMouseEvents(sf::Event& event, sf::Text* text_menu);
+        void menuKeyboardEvents(sf::Event& event);
+        void menuEvents(sf::Event& event, sf::Text* text_menu);
+        void menuMouseHilighting(sf::Event& event, sf::Text* text_menu);
+        void stateMachine();
+        GameState state;
+        sf::Font goodfoot;
+        sf::Vector2i mouse;
+        int mouse_menu_position;
 };
 
 #endif // GAME_H

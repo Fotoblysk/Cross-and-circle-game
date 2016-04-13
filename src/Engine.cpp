@@ -31,6 +31,7 @@ void Engine::init(sf::RenderWindow& window)
         players[0].setName(player1Name);
         players[1].setName(player2Name);
     }
+    goodfoot.loadFromFile("fonts/goodfoot.ttf"); // font is a sf::Font
 }
 void Engine::getMousePosition(sf::RenderWindow& window){
     mouse=static_cast<sf::Vector2i>(window.mapPixelToCoords(sf::Mouse::getPosition(window)));
@@ -49,12 +50,32 @@ void Engine::update(sf::RenderWindow& window){
         if(last_turn_board_state==Board::Winner)
         {
             std::cout<<std::endl<<"Winner is: "<<turn->toStr()<<std::endl;
-            state=EndOfGame;
+            state=Winner;
         }
     }
-    window.draw(board);
+    if(state==PlayingGame)
+        window.draw(board);
+    else if(state==Winner)
+    {
+        window.setView(window.getDefaultView());
+        std::string winning_msg="Winner is: ";
+        std::string tmp="\n\nPress esc to return to menu.";
+        winning_msg+=turn->toStr();
+        winning_msg+=tmp;
+        sf::Text text;
+        text.setFont(goodfoot);
+
+        text.setString(winning_msg);
+        text.setCharacterSize(50); // in pixels, not points!
+        text.setColor(sf::Color::White);
+        text.setStyle(sf::Text::Bold);
+        text.setPosition(window.getSize().x/2.0-text.getLocalBounds().width/2.0,window.getSize().y/2.0-text.getLocalBounds().height/2.0);
+        window.draw(text);
+    }
 }
 void Engine::events(sf::RenderWindow& window,sf::Event& event){ //TODO(foto): make camera events moving zooming ectr. in different function
+    static sf::Vector2i old_position;
+    static bool screen_moving;
     while (window.pollEvent(event))
     {
         if(event.type == sf::Event::MouseWheelScrolled)
@@ -80,6 +101,26 @@ void Engine::events(sf::RenderWindow& window,sf::Event& event){ //TODO(foto): ma
             clicked=true;
             DEBUG_MSG(" lmouse button=" <<clicked<< std::endl);
         }
+        if(event.type == sf::Event::MouseButtonPressed && event.key.code == sf::Mouse::Right)
+        {
+            old_position=sf::Mouse::getPosition();
+            if(!screen_moving)
+                screen_moving=true;
+            DEBUG_MSG(" right button - screen moving" << std::endl);
+        }
+        else if(event.type==sf::Event::MouseButtonReleased&&event.key.code == sf::Mouse::Right)
+        {
+            screen_moving=false;
+        }
+    }
+    if(screen_moving)
+    {
+        sf::Vector2i new_position=sf::Mouse::getPosition();
+        //DEBUG_MSG(" mouse moved - right button: delta.x : " << -new_position.x+old_position.x<<std::endl<<
+        //          "right button: delta.y : " << -new_position.y+old_position.y<<std::endl);
+        view.setCenter(view.getCenter().x+(-new_position.x+old_position.x),view.getCenter().y+(-new_position.y+old_position.y));
+        old_position=new_position;
+        window.setView(view);
     }
 }
 void Engine::keyboardEvents(sf::RenderWindow& window,sf::Event& event){
@@ -90,7 +131,7 @@ void Engine::keyboardEvents(sf::RenderWindow& window,sf::Event& event){
         DEBUG_MSG( "alt:" << event.key.alt << std::endl);
         DEBUG_MSG( "shift:" << event.key.shift << std::endl);
         DEBUG_MSG( "system:" << event.key.system << std::endl);
-        window.close();
+        state=EndOfGame;
     }
     if (event.key.code == sf::Keyboard::Add)
     {

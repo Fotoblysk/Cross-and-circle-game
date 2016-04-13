@@ -11,7 +11,7 @@
 class Engine
 {
     public:
-        enum EngineState{PlayingGame,EndOfGame};
+        enum EngineState{PlayingGame,Winner,EndOfGame};
         Engine();                                       ///<sets vars to neutral state, pointers to NULL
         virtual ~Engine();                              ///<only debug msg
         void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
@@ -33,6 +33,8 @@ class Engine
         EngineState state;
         sf::View view;
         float zoom;
+        sf::Font goodfoot;
+        // select the font
 };
 
 #endif // ENGINE_H

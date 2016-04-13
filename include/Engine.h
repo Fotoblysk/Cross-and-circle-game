@@ -31,6 +31,8 @@ class Engine
         void getMousePosition(sf::RenderWindow& window);                ///< gets global mouse position
         void keyboardEvents(sf::RenderWindow& window,sf::Event& event); ///< reads keyboard events
         EngineState state;
+        sf::View view;
+        float zoom;
 };
 
 #endif // ENGINE_H

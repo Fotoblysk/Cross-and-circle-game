@@ -6,6 +6,7 @@ Engine::Engine(){
     player_number=0;
     clicked=0;
     turn=NULL;
+    zoom=1;
 }
 
 Engine::~Engine(){
@@ -17,6 +18,7 @@ bool fullBoardCheck(sf::RenderWindow& window){
 }
 void Engine::init(sf::RenderWindow& window)
 {
+    view=window.getDefaultView();
     state=PlayingGame;
     board.init(HEIGHT,WIDTH,mouse);
     window.draw(board);
@@ -31,7 +33,7 @@ void Engine::init(sf::RenderWindow& window)
     }
 }
 void Engine::getMousePosition(sf::RenderWindow& window){
-    mouse=sf::Mouse::getPosition(window);
+    mouse=static_cast<sf::Vector2i>(window.mapPixelToCoords(sf::Mouse::getPosition(window)));
 }
 void Engine::update(sf::RenderWindow& window){
     getMousePosition(window);
@@ -52,9 +54,21 @@ void Engine::update(sf::RenderWindow& window){
     }
     window.draw(board);
 }
-void Engine::events(sf::RenderWindow& window,sf::Event& event){
+void Engine::events(sf::RenderWindow& window,sf::Event& event){ //TODO(foto): make camera events moving zooming ectr. in different function
     while (window.pollEvent(event))
     {
+        if(event.type == sf::Event::MouseWheelScrolled)
+        {
+            if(event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel)
+            {
+                std::cout << "wheel type: vertical" << std::endl;
+                DEBUG_MSG("scroll delta :"<<event.mouseWheelScroll.delta<<std::endl);
+                view.zoom(1.00f - 0.1f*event.mouseWheelScroll.delta);
+                window.setView(view);
+            }
+        }
+
+
         if (event.type == sf::Event::Closed)
             window.close();
         if (event.type == sf::Event::KeyPressed)
@@ -78,4 +92,41 @@ void Engine::keyboardEvents(sf::RenderWindow& window,sf::Event& event){
         DEBUG_MSG( "system:" << event.key.system << std::endl);
         window.close();
     }
+    if (event.key.code == sf::Keyboard::Add)
+    {
+        view.zoom(0.9f);
+        window.setView(view);
+        DEBUG_MSG("zoomed"<<zoom<<std::endl);
+    }
+    if (event.key.code == sf::Keyboard::Subtract)
+    {
+        view.zoom(1.1f);
+        window.setView(view);
+        DEBUG_MSG("out zoomed"<<zoom<<std::endl);
+    }
+    if (event.key.code == sf::Keyboard::Up)
+    {
+        view.setCenter((view.getCenter().x),(view.getCenter().y-10.0f));
+        window.setView(view);
+        DEBUG_MSG("mooving up"<<std::endl);
+    }
+    if (event.key.code == sf::Keyboard::Down)
+    {
+        view.setCenter((view.getCenter().x),(view.getCenter().y+10.0f));
+        window.setView(view);
+        DEBUG_MSG("mooving down"<<std::endl);
+    }
+    if (event.key.code == sf::Keyboard::Right)
+    {
+        view.setCenter((view.getCenter().x+10.0f),(view.getCenter().y));
+        window.setView(view);
+        DEBUG_MSG("mooving right"<<std::endl);
+    }
+    if (event.key.code == sf::Keyboard::Left)
+    {
+        view.setCenter((view.getCenter().x-10.0f),(view.getCenter().y));
+        window.setView(view);
+        DEBUG_MSG("mooving left"<<std::endl);
+    }
+
 }

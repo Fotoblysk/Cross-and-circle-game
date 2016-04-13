@@ -48,9 +48,39 @@ void Board::draw(sf::RenderTarget &target, sf::RenderStates states) const{
             target.draw(board_array[height_index][width_index]);
     }
 }
+sf::Vector2i Board::getBoardPosition(sf::Vector2i mouse_position){
+    sf::Vector2i board_position;
+    for(int height_index=0;height_index<height;height_index++)
+    {
+        for(int width_index=0;width_index<width;width_index++){
+            if(board_array[height_index][width_index].square.getGlobalBounds().contains(mouse_position.x,mouse_position.y))
+            {
+                board_position.x=height_index;
+                board_position.y=width_index;
+            }
+        }
+    }
+    return board_position;
+}
+
 Board::BoardState Board::update(bool& clicked,Player* currrent_turn,sf::Vector2i& current_mouse_position) {
     bool havent_any_failed=true;
     BoardState state_tmp=NextTurn;
+    #ifndef NDEBUG
+        static sf::Vector2i last_board_position;
+        sf::Vector2i positioner_tmp;
+        positioner_tmp.x=0;
+        positioner_tmp.y=0;
+        positioner_tmp=getBoardPosition(current_mouse_position);
+        if(positioner_tmp!=last_board_position)
+        {
+            last_board_position=positioner_tmp;
+            //if(last_board_position.x==0&&last_board_position.y==0)
+                //DEBUG_MSG("Position not on sqare"<<std::endl);
+           // else
+                DEBUG_MSG("Position = "<<last_board_position.x<<"  ,  "<<last_board_position.y<<std::endl);
+        }
+    #endif
     for(int height_index=0;height_index<height;height_index++)
     {
         for(int width_index=0;width_index<width;width_index++){
@@ -63,7 +93,6 @@ Board::BoardState Board::update(bool& clicked,Player* currrent_turn,sf::Vector2i
 }
 Board::BoardState Board::squareAction(bool& clicked,int height_index, int width_index, Player* currrent_turn,sf::Vector2i &current_mouse_position)
 {
-    /*mouse=*/current_mouse_position;
     if(board_array[height_index][width_index].square.getGlobalBounds().contains(current_mouse_position.x,current_mouse_position.y))
     {
         if(!board_array[height_index][width_index].isMarked())  // marking and hillighting only fr ummarked squares
@@ -87,7 +116,7 @@ Board::BoardState Board::squareAction(bool& clicked,int height_index, int width_
         board_array[height_index][width_index].square.setFillColor(sf::Color::White);
     return WaitingForTurn;
 }
-Board::BoardState Board::checkWin(int height_index,int width_index,Player* currrent_turn)const{ //TODO(Foto) exit() is baad
+Board::BoardState Board::checkWin(int height_index,int width_index,Player* currrent_turn)const{
     /////////
     int counter=1;
     int i=1;

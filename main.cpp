@@ -29,13 +29,28 @@
 #include <SFML/Graphics.hpp>
 #include <Game.h>
 
+//....!TO DO!....//////////////
+    //TODO(Foto):0.moving board via right mouse button.
+    //TODO(Foto):1.Update doc. zooming wheel, mowing and zooming with keyboard, no more shared vars, enum BoardState,  EngineState.
+    //TODO(Foto):2.Update doc.
+    //TODO(Foto):3.Make menu - at least minimal.
+    //TODO(Foto):4.Size of board manually chosen.
+    //TODO(Foto):5.Net game/Ai.
+
+    //?to re-think
+        //:Dividing square from sf::RectangleShape.
+        //:Dividing Board from sf::Shape.
+    //?
+//.....///////////////////////
 
 /*!
  * \brief Runs RenderWindow. Runs game.
 */
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(500,500), "SFML window", sf::Style::Fullscreen );
+   // sf::ContextSettings settings;
+    //settings.antialiasingLevel = 8;
+    sf::RenderWindow window(sf::VideoMode(500,500), "SFML window", sf::Style::Fullscreen/*,settings */);
     Game game(window);
     return 0;
 }

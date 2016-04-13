@@ -24,7 +24,7 @@ class Board : public sf::Drawable, sf::Transformable
         void init(int height_in, int width_in, sf::Vector2i& mouse_in); ///< inits board sets size and  mouse var
 
         BoardState update(bool& marked_in, Player* currrent_turn,sf::Vector2i& current_mouse_position);   ///< updates board highlight squares
-
+        sf::Vector2i getBoardPosition(sf::Vector2i mouse_position);
     protected:
 
 
@@ -36,10 +36,10 @@ class Board : public sf::Drawable, sf::Transformable
         Square** board_array;                                   ///<pointer to dynamic allocated array of squares. deletes  in destructor
         int height;                                             ///<height of the dynamic array of squares
         int width;                                              ///<width of the dynamic array of squares
-       // sf::Vector2i mouse;                                    ///< pointer to mouse var from Engine
         sf::Texture texture;                                    ///<basic every single square texture
         Square* mouse_hilighting;                               ///<pointer to square on which mouse is on highlight
         BoardState state;
+        sf::Vector2i current_board_position;
 };
 
 #endif // BOARD_H

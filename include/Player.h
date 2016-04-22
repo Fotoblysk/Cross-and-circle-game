@@ -18,6 +18,7 @@ class Player
         sf::Texture* getTexturePtr(); ///<returns pointer to current player texture (texture_marked)
         std::string& toStr();
         void setName(std::string);
+
     protected:
 
     private:

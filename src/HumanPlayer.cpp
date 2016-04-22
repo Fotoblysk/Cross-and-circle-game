@@ -1,11 +1,9 @@
 #include "HumanPlayer.h"
 
-HumanPlayer::HumanPlayer()
-{
+HumanPlayer::HumanPlayer(){
     //ctor
 }
 
-HumanPlayer::~HumanPlayer()
-{
+HumanPlayer::~HumanPlayer(){
     //dtor
 }

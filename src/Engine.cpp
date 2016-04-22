@@ -2,22 +2,26 @@
 #include <iostream>
 #define HEIGHT 20
 #define WIDTH 30
-Engine::Engine(){
-    player_number=0;
-    clicked=0;
-    turn=NULL;
-    zoom=1;
+
+Engine::Engine()
+:
+    player_number(0),
+    clicked(0),
+    turn(nullptr)
+{
+    DEBUG_MSG("Engine removing"<<std::endl);
 }
 
 Engine::~Engine(){
-    DEBUG_MSG("badass Engine removing"<<std::endl);
+    DEBUG_MSG("Engine removing"<<std::endl);
 }
+
 bool fullBoardCheck(sf::RenderWindow& window){
 
     return true;
 }
-void Engine::init(sf::RenderWindow& window)
-{
+
+void Engine::init(sf::RenderWindow& window){
     view=window.getDefaultView();
     state=PlayingGame;
     board.init(HEIGHT,WIDTH,mouse);
@@ -33,9 +37,11 @@ void Engine::init(sf::RenderWindow& window)
     }
     goodfoot.loadFromFile("fonts/goodfoot.ttf"); // font is a sf::Font
 }
+
 void Engine::getMousePosition(sf::RenderWindow& window){
     mouse=static_cast<sf::Vector2i>(window.mapPixelToCoords(sf::Mouse::getPosition(window)));
 }
+
 void Engine::update(sf::RenderWindow& window){
     getMousePosition(window);
     last_turn_board_state=board.update(clicked,turn,mouse);
@@ -66,13 +72,14 @@ void Engine::update(sf::RenderWindow& window){
         text.setFont(goodfoot);
 
         text.setString(winning_msg);
-        text.setCharacterSize(50); // in pixels, not points!
+        text.setCharacterSize(50);
         text.setColor(sf::Color::White);
         text.setStyle(sf::Text::Bold);
         text.setPosition(window.getSize().x/2.0-text.getLocalBounds().width/2.0,window.getSize().y/2.0-text.getLocalBounds().height/2.0);
         window.draw(text);
     }
 }
+
 void Engine::events(sf::RenderWindow& window,sf::Event& event){ //TODO(foto): make camera events moving zooming ectr. in different function
     static sf::Vector2i old_position;
     static bool screen_moving;
@@ -108,7 +115,7 @@ void Engine::events(sf::RenderWindow& window,sf::Event& event){ //TODO(foto): ma
                 screen_moving=true;
             DEBUG_MSG(" right button - screen moving" << std::endl);
         }
-        else if(event.type==sf::Event::MouseButtonReleased&&event.key.code == sf::Mouse::Right)
+        else if(event.type==sf::Event::MouseButtonReleased && event.key.code == sf::Mouse::Right)
         {
             screen_moving=false;
         }
@@ -123,6 +130,7 @@ void Engine::events(sf::RenderWindow& window,sf::Event& event){ //TODO(foto): ma
         window.setView(view);
     }
 }
+
 void Engine::keyboardEvents(sf::RenderWindow& window,sf::Event& event){
     if (event.key.code == sf::Keyboard::Escape)
     {

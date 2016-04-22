@@ -8,7 +8,7 @@
 */
 class Game
 {
-    enum GameState{Play,Menu, End};
+    enum GameState{Play, Menu, End};
     public:
         Game(sf::RenderWindow& window);     ///< Initialization of RenderWindow& window - main window of the game.
         virtual ~Game();                       ///< Runs StartGame() function
@@ -23,7 +23,7 @@ class Game
         void menuMouseEvents(sf::Event& event, sf::Text* text_menu);
         void menuKeyboardEvents(sf::Event& event);
         void menuEvents(sf::Event& event, sf::Text* text_menu);
-        void menuMouseHilighting(sf::Event& event, sf::Text* text_menu);
+        void menuMouseHover(sf::Event& event, sf::Text* text_menu);
         void stateMachine();
         GameState state;
         sf::Font goodfoot;

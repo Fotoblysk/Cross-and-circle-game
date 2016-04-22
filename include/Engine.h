@@ -12,12 +12,12 @@ class Engine
 {
     public:
         enum EngineState{PlayingGame,Winner,EndOfGame};
-        Engine();                                       ///<sets vars to neutral state, pointers to NULL
+        Engine();                                       ///<sets vars to neutral state, pointers to nullptr
         virtual ~Engine();                              ///<only debug msg
         void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
         void update(sf::RenderWindow& window);          ///updates physics of the game,  draws board.
-        void events(sf::RenderWindow& window,sf::Event& event); ///<reads events - all
-        EngineState currentState()const{return state;}
+        void events(sf::RenderWindow& window, sf::Event& event); ///<reads events - all
+        EngineState currentState() const { return state; }
     protected:
     private:
         Board board;                                    ///< contains dynamic allocated array of squares
@@ -29,7 +29,7 @@ class Engine
         bool clicked;                                   ///< var if lmouse button was clicked true else false
         Board::BoardState last_turn_board_state;                  ///< true if last turn was successful (no illegal action like marking already marked square)
         void getMousePosition(sf::RenderWindow& window);                ///< gets global mouse position
-        void keyboardEvents(sf::RenderWindow& window,sf::Event& event); ///< reads keyboard events
+        void keyboardEvents(sf::RenderWindow& window, sf::Event& event); ///< reads keyboard events
         EngineState state;
         sf::View view;
         float zoom;

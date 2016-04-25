@@ -1,5 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
+#define NUMBER_OF_MENU_BUTTONS 2
 #include "Engine.h"
 #include<../debugging_tolls.h>
 /*!

@@ -48,12 +48,12 @@ void Game::menu(){
                                              // in normal center and zoom
     sf::Event event;
 
-    sf::Text text_menu[2];
+    sf::Text text_menu[NUMBER_OF_MENU_BUTTONS];
     text_menu[0].setString("Play Game");
     text_menu[1].setString("Exit"     );
 
 
-    for(int i=0;i<2;i++)
+    for(int i=0;i<NUMBER_OF_MENU_BUTTONS;i++)
     {
         text_menu[i].setFont(goodfoot);
         text_menu[i].setCharacterSize(50);  // in pixels, not points!
@@ -113,15 +113,15 @@ void Game::menuKeyboardEvents(sf::Event& event){
 
 void Game::menuMouseHover(sf::Event& event, sf::Text* text_menu){
     mouse_menu_position=0;
-    for(int i=0; i<2; i++)
+    for(int i=0; i<NUMBER_OF_MENU_BUTTONS; i++)
     {
         if (text_menu[i].getGlobalBounds().contains(mouse.x, mouse.y ))
         {
             if(text_menu[i].getColor() != sf::Color::Yellow)
                 text_menu[i].setColor(sf::Color::Yellow);
-                mouse_menu_position = i + 1;
+            mouse_menu_position = i + 1;
         }else if(text_menu[i].getColor() != sf::Color::White)
-                text_menu[i].setColor(sf::Color::White);
+            text_menu[i].setColor(sf::Color::White);
     }
 }
 

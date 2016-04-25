@@ -17,7 +17,7 @@ class Engine
         void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
         void update(sf::RenderWindow& window);          ///updates physics of the game,  draws board.
         void events(sf::RenderWindow& window, sf::Event& event); ///<reads events - all
-        EngineState currentState() const { return state; }
+        EngineState currentState() const;
     protected:
     private:
         Board board;                                    ///< contains dynamic allocated array of squares

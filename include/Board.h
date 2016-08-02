@@ -31,7 +31,6 @@ class Board : public sf::Drawable, sf::Transformable
         BoardState checkWin(int height_index, int width_index, Player* current_turn)const;      ///checks if just done turn have made current player winnner
         BoardState squareAction(bool& clicked, int height_index, int width_index, Player* currrent_turn, sf::Vector2i &current_mouse_position);///<action of single square Player* is a pointer to current  players turn from Engine class
         virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const; ///< draws all squares. this is used after all seting what to hilight, mark, ect
-
         Square** board_array;                                   ///<pointer to dynamic allocated array of squares. deletes  in destructor
         int height;                                             ///<height of the dynamic array of squares
         int width;                                              ///<width of the dynamic array of squares

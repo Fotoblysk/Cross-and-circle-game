@@ -6,7 +6,7 @@
 Engine::Engine()
 :
     turn(nullptr),
-    player_number(0),
+    current_player_number(0),
     clicked(0)
 {
     DEBUG_MSG("Engine creating" << std::endl);
@@ -40,11 +40,11 @@ void Engine::getMousePosition(sf::RenderWindow& window){
 void Engine::update(sf::RenderWindow& window){
     getMousePosition(window);
     last_turn_board_state = board.update(clicked,turn,mouse);
-    if(clicked)
+    if(clicked && state != Winner)
     {
         if(last_turn_board_state == Board::NextTurn)
         {
-            turn = &players[(++player_number)%=2]; ///unfortunately changes when there were player turn failed
+            turn = &players[(++current_player_number)%=2]; ///unfortunately changes when there were player turn failed
             DEBUG_MSG("NEXT TURN : " << turn->toStr() << std::endl);
         }
         clicked = false;

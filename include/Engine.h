@@ -1,6 +1,7 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 #include <SFML/Graphics.hpp>
+//#include <SFML/Network>
 #include <Board.h>
 #include "Player.h"
 #include<../debugging_tolls.h>
@@ -18,13 +19,15 @@ class Engine
         void update(sf::RenderWindow& window);          ///updates physics of the game,  draws board.
         void events(sf::RenderWindow& window, sf::Event& event); ///<reads events - all
         EngineState currentState() const;
+        //getRemoteTurn
+        //connect();
     protected:
     private:
         Board board;                                    ///< contains dynamic allocated array of squares
         sf::Vector2i mouse;                             ///< current mouse position
         Player players[2];                              ///<just for tests array of players
         Player* turn;                                   ///< pointer to Player whose turn it is
-        int player_number;                              ///< To fix .
+        int current_player_number;                              ///< To fix .
         int number_of_players;                          ///< number of players
         bool clicked;                                   ///< var if lmouse button was clicked true else false
         Board::BoardState last_turn_board_state;                  ///< true if last turn was successful (no illegal action like marking already marked square)

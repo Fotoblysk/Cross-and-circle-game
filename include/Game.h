@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
-#define NUMBER_OF_MENU_BUTTONS 2
+#define NUMBER_OF_MENU_BUTTONS 3
 #include "Engine.h"
 #include<../debugging_tolls.h>
 /*!
@@ -9,7 +9,7 @@
 */
 class Game
 {
-    enum GameState{Play, Menu, End};
+    enum GameState{Play, Options, Menu, End};
     public:
         Game(sf::RenderWindow& window);     ///< Initialization of RenderWindow& window - main window of the game.
         virtual ~Game();                       ///< Runs StartGame() function

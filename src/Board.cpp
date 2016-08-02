@@ -15,12 +15,12 @@ Board::Board(int height_in, int width_in,sf::Vector2i& mouse_in){
 }
 
 Board::~Board(){
-    if(board_array!=nullptr){
+    if(board_array != nullptr){
         for(int height_index = 0; height_index<height; height_index++)
             delete [] board_array[height_index];
         board_array = nullptr;
     }
-    DEBUG_MSG("badass Board removing"<<std::endl);
+    DEBUG_MSG("badass Board removing" << std::endl);
 
 }
 
@@ -133,7 +133,7 @@ Board::BoardState Board::checkWin(int height_index,int width_index,Player* currr
         counter++;
         i++;
     }
-    if(counter>=IN_A_ROW_TO_WIN)
+    if(counter >= IN_A_ROW_TO_WIN)
     {
         DEBUG_MSG("ENDO GEJMO");
         //exit(1);
@@ -145,14 +145,14 @@ Board::BoardState Board::checkWin(int height_index,int width_index,Player* currr
     ///////////////////////
     counter = 1;
     i = 1;
-    while(width_index+i<WIDTH && board_array[height_index][width_index+i].getMarkedBy()==currrent_turn)
+    while(width_index+i < WIDTH  &&  board_array[height_index][width_index+i].getMarkedBy() == currrent_turn)
     {
         counter++;
         i++;
     }
 
     i = 1;
-    while(width_index-i>=0 && board_array[height_index][width_index-i].getMarkedBy()==currrent_turn)
+    while(width_index-i >= 0  &&  board_array[height_index][width_index-i].getMarkedBy() == currrent_turn)
     {
         counter++;
         i++;

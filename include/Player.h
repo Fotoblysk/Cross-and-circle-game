@@ -22,9 +22,10 @@ class Player
     protected:
 
     private:
-    std::string name;
-    sf::Texture texture_marked; ///< texture to draw when a player marked square.
-    //TODO(FOTO#5#): set default texture to be copied from default square texture,  or gonna make that const , get  deafult from square when creating and print circle crosss square on it before creating a player
+        int player_number;
+        std::string name;
+        sf::Texture texture_marked; ///< texture to draw when a player marked square.
+        //TODO(FOTO#5#): set default texture to be copied from default square texture,  or gonna make that const , get  deafult from square when creating and print circle crosss square on it before creating a player
 
 
 

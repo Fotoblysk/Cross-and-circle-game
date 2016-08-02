@@ -23,6 +23,10 @@ void Game::stateMachine(){
             startGame();
             break;
 
+        case Options :
+            startGame();
+            break;
+
         case End :
             window.close();
             break;
@@ -50,7 +54,8 @@ void Game::menu(){
 
     sf::Text text_menu[NUMBER_OF_MENU_BUTTONS];
     text_menu[0].setString("Play Game");
-    text_menu[1].setString("Exit"     );
+    text_menu[1].setString("Options");
+    text_menu[2].setString("Exit");
 
 
     for(int i=0;i<NUMBER_OF_MENU_BUTTONS;i++)
@@ -66,7 +71,7 @@ void Game::menu(){
     while(state==Menu)
     {
         window.clear();
-        for(int i=0; i<2; i++)
+        for(int i=0; i<NUMBER_OF_MENU_BUTTONS; i++)
             window.draw(text_menu[i]);
         menuEvents(event, text_menu);
         window.display();
@@ -133,8 +138,10 @@ void Game::menuMouseEvents(sf::Event& event, sf::Text* text_menu){
         case 1 :
             state = Play;
             break;
-
         case 2 :
+            state = Options;
+            break;
+        case 3 :
             state = End;
             break;
         }

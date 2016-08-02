@@ -4,6 +4,7 @@
 //#include <SFML/Network>
 #include <Board.h>
 #include "Player.h"
+#include<memory>
 #include<../debugging_tolls.h>
 /*!
  * \brief Engine class. Class which manage main loop of game, reads keyboard events, update physics.
@@ -15,17 +16,16 @@ class Engine
         enum EngineState{PlayingGame,Winner,EndOfGame};
         Engine();                                       ///<sets vars to neutral state, pointers to nullptr
         virtual ~Engine();                              ///<only debug msg
-        void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
-        void update(sf::RenderWindow& window);          ///updates physics of the game,  draws board.
+        virtual void init(sf::RenderWindow& window);            ///<initialization of Engine, sets player textures
+        virtual void update(sf::RenderWindow& window);          ///updates physics of the game,  draws board.
         void events(sf::RenderWindow& window, sf::Event& event); ///<reads events - all
         EngineState currentState() const;
         //getRemoteTurn
         //connect();
     protected:
-    private:
         Board board;                                    ///< contains dynamic allocated array of squares
         sf::Vector2i mouse;                             ///< current mouse position
-        Player players[2];                              ///<just for tests array of players
+        std::unique_ptr<Player> players[2];                              ///<just for tests array of players
         Player* turn;                                   ///< pointer to Player whose turn it is
         int current_player_number;                              ///< To fix .
         int number_of_players;                          ///< number of players

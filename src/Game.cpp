@@ -34,12 +34,13 @@ void Game::stateMachine(){
 }
 
 void Game::startGame(){
-    engine.init(window);
-    while(window.isOpen()  &&  engine.currentState() != Engine::EndOfGame)
+    std::unique_ptr<Engine>engine(new NetworkEngine);
+    engine->init(window);
+    while(window.isOpen()  &&  engine->currentState() != Engine::EndOfGame)
     {
         window.clear();
-        engine.events(window, event);
-        engine.update(window);
+        engine->events(window, event);
+        engine->update(window);
         window.display();
     }
     state = Menu;

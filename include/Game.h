@@ -2,7 +2,9 @@
 #define GAME_H
 #define NUMBER_OF_MENU_BUTTONS 3
 #include "Engine.h"
+#include "NetworkEngine.h"
 #include<../debugging_tolls.h>
+#include<memory>
 /*!
  * \brief Game main class. Class which is used run engine.
  * This class will menage menu and settings
@@ -16,7 +18,6 @@ class Game
     protected:
 
     private:
-        Engine engine;                      ///<Main engine of the game
         sf::RenderWindow& window;           ///<Main game window
         sf::Event event;                    ///< Event object probably unused
         void startGame();                   ///< Runs engine starts multi player seats switch game.

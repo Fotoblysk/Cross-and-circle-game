@@ -2,6 +2,7 @@
 #include <iostream>
 #define HEIGHT 20
 #define WIDTH 30
+#include "HumanPlayer.h"
 
 Engine::Engine()
 :
@@ -21,14 +22,17 @@ void Engine::init(sf::RenderWindow& window){
     state = PlayingGame;
     board.init(HEIGHT, WIDTH, mouse);
     window.draw(board);
-    turn = &players[0];
-    players[0].setTexture("textures/square_marked_circle.png");
-    players[1].setTexture("textures/square_marked_cross.png");
+    players[0].reset(new HumanPlayer);
+    players[1].reset(new HumanPlayer);
+    players[1]->move_premission = false;
+    turn = players[0].get();
+    players[0]->setTexture("textures/square_marked_circle.png");
+    players[1]->setTexture("textures/square_marked_cross.png");
     {
         const std::string player1Name("Player1");
         const std::string player2Name("Player2");
-        players[0].setName(player1Name);
-        players[1].setName(player2Name);
+        players[0]->setName(player1Name);
+        players[1]->setName(player2Name);
     }
     goodfoot.loadFromFile("fonts/goodfoot.ttf"); // font is a sf::Font
 }
@@ -44,7 +48,7 @@ void Engine::update(sf::RenderWindow& window){
     {
         if(last_turn_board_state == Board::NextTurn)
         {
-            turn = &players[(++current_player_number)%=2]; ///unfortunately changes when there were player turn failed
+            turn = players[(++current_player_number)%=2].get(); ///unfortunately changes when there were player turn failed
             DEBUG_MSG("NEXT TURN : " << turn->toStr() << std::endl);
         }
         clicked = false;

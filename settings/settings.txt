@@ -1,0 +1,11 @@
+500x500
+fullscreen 1
+HEIGHT 20
+WIDTH 30
+font fonts/goodfoot.ttf
+player circle
+name Player1Circle
+texture textures/square_marked_circle.png
+player cross
+name Player2Cross
+texture textures/square_marked_cross.png

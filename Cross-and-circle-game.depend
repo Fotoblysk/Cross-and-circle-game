@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1461582476 source:c:\users\foto\documents\github\cross-and-circle-game\main.cpp
+1470128989 source:c:\users\foto\documents\github\cross-and-circle-game\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<Game.h>
@@ -446,20 +446,22 @@
 
 1461583454 ing_tolls.h>
 
-1461579070 source:c:\users\foto\documents\github\cross-and-circle-game\src\engine.cpp
+1470135978 source:c:\users\foto\documents\github\cross-and-circle-game\src\engine.cpp
 	"Engine.h"
 	<iostream>
+	"HumanPlayer.h"
 
-1461342297 c:\users\foto\documents\github\cross-and-circle-game\include\engine.h
+1470135713 c:\users\foto\documents\github\cross-and-circle-game\include\engine.h
 	<SFML/Graphics.hpp>
 	<Board.h>
 	"Player.h"
+	<memory>
 	<../debugging_tolls.h>
 
 1461328354 source:c:\users\foto\documents\github\cross-and-circle-game\src\player.cpp
 	"Player.h"
 
-1470128989 c:\users\foto\documents\github\cross-and-circle-game\include\player.h
+1470136804 c:\users\foto\documents\github\cross-and-circle-game\include\player.h
 	<iostream>
 	<SFML/Graphics.hpp>
 	<../debugging_tolls.h>
@@ -476,11 +478,13 @@
 	"Player.h"
 	<../debugging_tolls.h>
 
-1461583454 c:\users\foto\documents\github\cross-and-circle-game\include\game.h
+1470135882 c:\users\foto\documents\github\cross-and-circle-game\include\game.h
 	"Engine.h"
+	"NetworkEngine.h"
 	<../debugging_tolls.h>
+	<memory>
 
-1461616654 source:c:\users\foto\documents\github\cross-and-circle-game\src\game.cpp
+1470136028 source:c:\users\foto\documents\github\cross-and-circle-game\src\game.cpp
 	"Game.h"
 
 1461845334 c:\users\foto\documents\github\cross-and-circle-game\debugging_tolls.h
@@ -495,12 +499,12 @@
 1461318725 c:\users\foto\documents\github\cross-and-circle-game\include\aiplayer.h
 	"Player.h"
 
-1461328354 source:c:\users\foto\documents\github\cross-and-circle-game\src\humanplayer.cpp
+1470135551 source:c:\users\foto\documents\github\cross-and-circle-game\src\humanplayer.cpp
 	"HumanPlayer.h"
 
 1461328354 er.h"
 
-1461318725 c:\users\foto\documents\github\cross-and-circle-game\include\humanplayer.h
+1470135502 c:\users\foto\documents\github\cross-and-circle-game\include\humanplayer.h
 	"Player.h"
 
 1461578876 source:/media/fotoblysk/Windows8_OS/Users/Foto/Documents/GitHub/Cross-and-circle-game/main.cpp
@@ -1324,4 +1328,10 @@
 	<SFML/System/String.hpp>
 	<string>
 	<vector>
+
+1470136067 source:c:\users\foto\documents\github\cross-and-circle-game\src\networkengine.cpp
+	"NetworkEngine.h"
+
+1470135279 c:\users\foto\documents\github\cross-and-circle-game\include\networkengine.h
+	<Engine.h>
 

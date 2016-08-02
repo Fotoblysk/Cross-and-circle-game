@@ -6,7 +6,7 @@
 class HumanPlayer:public Player
 {
     public:
-        HumanPlayer();
+        HumanPlayer(){move_premission = true;}
         virtual ~HumanPlayer();
 
     protected:

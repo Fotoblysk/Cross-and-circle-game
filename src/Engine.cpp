@@ -72,7 +72,7 @@ void Engine::update(sf::RenderWindow& window){
 
         text.setString(winning_msg);
         text.setCharacterSize(50);
-        text.setColor(sf::Color::White);
+        text.setFillColor(sf::Color::White);
         text.setStyle(sf::Text::Bold);
         text.setPosition(window.getSize().x/2.0 - text.getLocalBounds().width/2.0, window.getSize().y/2.0 - text.getLocalBounds().height/2.0);
         window.draw(text);

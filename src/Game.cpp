@@ -63,7 +63,7 @@ void Game::menu(){
     {
         text_menu[i].setFont(goodfoot);
         text_menu[i].setCharacterSize(50);  // in pixels, not points!
-        text_menu[i].setColor(sf::Color::White);
+        text_menu[i].setFillColor(sf::Color::White);
         text_menu[i].setStyle(sf::Text::Bold);
         text_menu[i].setPosition((window.getSize().x - text_menu[i].getLocalBounds().width) / 2.0
                                 ,(window.getSize().y - (2 * (text_menu[0].getLocalBounds().height + 50))) / 2.0 + i * (text_menu[0].getLocalBounds().height + 50));
@@ -123,11 +123,11 @@ void Game::menuMouseHover(sf::Event& event, sf::Text* text_menu){
     {
         if (text_menu[i].getGlobalBounds().contains(mouse.x, mouse.y ))
         {
-            if(text_menu[i].getColor() != sf::Color::Yellow)
-                text_menu[i].setColor(sf::Color::Yellow);
+            if(text_menu[i].getFillColor() != sf::Color::Yellow)
+                text_menu[i].setFillColor(sf::Color::Yellow);
             mouse_menu_position = i + 1;
-        }else if(text_menu[i].getColor() != sf::Color::White)
-            text_menu[i].setColor(sf::Color::White);
+        }else if(text_menu[i].getFillColor() != sf::Color::White)
+            text_menu[i].setFillColor(sf::Color::White);
     }
 }
 

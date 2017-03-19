@@ -1,16 +1,17 @@
 #ifndef AIPLAYER_H
 #define AIPLAYER_H
+
 #include "Player.h"
 
-class AiPlayer: public Player
-{
-    public:
-        AiPlayer();
-        virtual ~AiPlayer();
+class AiPlayer : public Player {
+public:
+    AiPlayer();
 
-    protected:
+    virtual ~AiPlayer();
 
-    private:
+protected:
+
+private:
 };
 
 #endif // AIPLAYER_H

@@ -1,17 +1,18 @@
 #ifndef HUMANPLAYER_H
 #define HUMANPLAYER_H
+
 #include "Player.h"
 
 
-class HumanPlayer:public Player
-{
-    public:
-        HumanPlayer(){move_premission = true;}
-        virtual ~HumanPlayer();
+class HumanPlayer : public Player {
+public:
+    HumanPlayer() { move_premission = true; }
 
-    protected:
+    virtual ~HumanPlayer();
 
-    private:
+protected:
+
+private:
 };
 
 #endif // HUMANPLAYER_H

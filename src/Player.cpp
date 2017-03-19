@@ -1,24 +1,24 @@
 #include "Player.h"
 
-Player::Player(){
+Player::Player() {
 }
 
-void Player::setTexture(char *fileDir){
+void Player::setTexture(char *fileDir) {
     texture_marked.loadFromFile(fileDir);
 }
 
-Player::~Player(){
+Player::~Player() {
     DEBUG_MSG("badass Player removing" << std::endl);
 }
 
-sf::Texture* Player::getTexturePtr(){
+sf::Texture *Player::getTexturePtr() {
     return &texture_marked;
 }
 
-std::string& Player::toStr(){
+std::string &Player::toStr() {
     return name;
 }
 
-void Player::setName(std::string name_in){
+void Player::setName(std::string name_in) {
     name = name_in;
 }

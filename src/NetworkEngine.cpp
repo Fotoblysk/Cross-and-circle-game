@@ -19,7 +19,7 @@ void NetworkEngine::update(sf::RenderWindow& window){
             {
                 if(last_turn_board_state == Board::NextTurn)
                 {
-                    turn = players[(++current_player_number)%=2].get(); ///unfortunately changes when there were player turn failed
+                    turn = players[(++current_player_number)%=2].get();
                     DEBUG_MSG("NEXT TURN : " << turn->toStr() << std::endl);
                 }
                 clicked = false;

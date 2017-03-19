@@ -34,7 +34,7 @@ void Game::stateMachine(){
 }
 
 void Game::startGame(){
-    std::unique_ptr<Engine>engine(new NetworkEngine);
+    std::unique_ptr<Engine>engine(new Engine);
     engine->init(window);
     while(window.isOpen()  &&  engine->currentState() != Engine::EndOfGame)
     {

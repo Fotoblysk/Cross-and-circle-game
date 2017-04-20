@@ -6,6 +6,7 @@
 class AiPlayer : public Player {
 public:
     AiPlayer();
+    std::vector<int> getRandomMove();
 
     virtual ~AiPlayer();
 

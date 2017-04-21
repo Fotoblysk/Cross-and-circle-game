@@ -22,3 +22,7 @@ std::string &Player::toStr() {
 void Player::setName(std::string name_in) {
     name = name_in;
 }
+
+bool Player::isPlayerUsingGui() {
+    return true;
+}

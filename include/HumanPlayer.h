@@ -6,8 +6,6 @@
 
 class HumanPlayer : public Player {
 public:
-    HumanPlayer() { move_premission = true; }
-    std::vector<int> makeMove();
     virtual ~HumanPlayer();
 
 protected:

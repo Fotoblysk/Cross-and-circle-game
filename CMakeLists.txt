@@ -1,6 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
 project(Cross_and_circle_game)
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
 set(SOURCE_FILES main.cpp src/AiPlayer.cpp include/AiPlayer.h src/Board.cpp include/Board.h src/Engine.cpp include/Engine.h src/Game.cpp include/Game.h src/HumanPlayer.cpp include/HumanPlayer.h src/NetworkEngine.cpp include/NetworkEngine.h src/Player.cpp include/Player.h src/Square.cpp include/Square.h)
 add_executable(Cross_and_circle_game ${SOURCE_FILES})
@@ -9,9 +8,10 @@ set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 #Find any version 2.X of SFML
 #See the FindSFML.cmake file for additional details and instructions
 find_package(SFML 2 REQUIRED system window graphics network audio)
+find_package(Threads REQUIRED)
 if (SFML_FOUND)
     include_directories(${SFML_INCLUDE_DIR})
-    target_link_libraries(Cross_and_circle_game ${SFML_LIBRARIES})
+    target_link_libraries(Cross_and_circle_game ${SFML_LIBRARIES} Threads::Threads)
 endif ()
 if (SFML_FOUND AND ${CMAKE_SYSTEM_NAME} MATCHES "Windows")
     set(SFML_BIN "${SFML_INCLUDE_DIR}/../bin")

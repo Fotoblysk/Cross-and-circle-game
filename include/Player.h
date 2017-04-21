@@ -23,9 +23,9 @@ public:
 
     virtual bool getMovePremission() { return move_premission; }
 
-    bool move_premission;
+    bool move_premission = true;
+    virtual bool isPlayerUsingGui(); //TODO this design is bad
 protected:
-    int player_number;
     std::string name;
     sf::Texture texture_marked; ///< texture to draw when a player marked square.
     //TODO(FOTO#5#): set default texture to be copied from default square texture,  or gonna make that const , get  deafult from square when creating and print circle crosss square on it before creating a player

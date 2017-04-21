@@ -1,5 +1,6 @@
 #include "Engine.h"
 #include <iostream>
+#include <AiPlayer.h>
 
 #define HEIGHT 20
 #define WIDTH 30
@@ -21,10 +22,10 @@ Engine::~Engine() {
 void Engine::init(sf::RenderWindow &window) {
     view = window.getDefaultView();
     state = PlayingGame;
-    board.init(HEIGHT, WIDTH, mouse);
+    board.init(HEIGHT, WIDTH);
     window.draw(board);
-    players[0].reset(new HumanPlayer);
-    players[1].reset(new HumanPlayer);
+    players[0].reset(new AiPlayer);
+    players[1].reset(new AiPlayer);
     players[1]->move_premission = false;
     turn = players[0].get();
     players[0]->setTexture("textures/square_marked_circle.png");
@@ -44,18 +45,20 @@ void Engine::getMousePosition(sf::RenderWindow &window) {
 
 void Engine::update(sf::RenderWindow &window) {
     getMousePosition(window);
-    last_turn_board_state = board.update(clicked, turn, mouse);
-    if (clicked && state != Winner) {
+    if (state != Winner) {
+        last_turn_board_state = board.update(clicked, turn, mouse);
         if (last_turn_board_state == Board::NextTurn) {
             turn = players[(++current_player_number) %= 2].get(); ///unfortunately changes when there were player turn failed
             DEBUG_MSG("NEXT TURN : " << turn->toStr() << std::endl);
         }
-        clicked = false;
-        if (last_turn_board_state == Board::Winner) {
-            DEBUG_MSG("Winner is: " << turn->toStr() << std::endl);
-            state = Winner;
-        }
     }
+    if (clicked)
+        clicked = false;
+    if (last_turn_board_state == Board::Winner) {
+        DEBUG_MSG("Winner is: " << turn->toStr() << std::endl);
+        state = Winner;
+    }
+
     if (state == PlayingGame)
         window.draw(board);
     else if (state == Winner) {

@@ -41,7 +41,8 @@ void Game::startGame(){
         window.clear();
         engine->events(window, event);
         engine->update(window);
-        window.display();
+        if (engine->gui == true)
+            window.display();
     }
     state = Menu;
     stateMachine();

@@ -2,8 +2,6 @@
 #include <iostream>
 #include <AiPlayer.h>
 
-#define HEIGHT 20
-#define WIDTH 30
 
 #include "HumanPlayer.h"
 
@@ -22,14 +20,18 @@ Engine::~Engine() {
 void Engine::init(sf::RenderWindow &window) {
     view = window.getDefaultView();
     state = PlayingGame;
-    board.init(HEIGHT, WIDTH);
     window.draw(board);
-    players[0].reset(new AiPlayer);
-    players[1].reset(new AiPlayer);
-    players[1]->move_premission = false;
+    AiPlayer *tmp1 = (new AiPlayer(AiPlayer::Strategy::MinMax, nullptr));
+//    HumanPlayer* tmp1 = (new HumanPlayer());
+    players[1].reset(new AiPlayer(AiPlayer::Strategy::MinMax, tmp1));
+    tmp1->setOtherPlayer(players[1].get());
+    players[0].reset(tmp1);
     turn = players[0].get();
     players[0]->setTexture("textures/square_marked_circle.png");
+    players[0]->player_char = 'O';
     players[1]->setTexture("textures/square_marked_cross.png");
+    players[1]->player_char = 'X';
+    board.init(HEIGHT, WIDTH);
     {
         const std::string player1Name("Player1");
         const std::string player2Name("Player2");
@@ -59,7 +61,7 @@ void Engine::update(sf::RenderWindow &window) {
         state = Winner;
     }
 
-    if (state == PlayingGame)
+    if (state == PlayingGame && gui == true)
         window.draw(board);
     else if (state == Winner) {
         window.setView(window.getDefaultView());
@@ -87,7 +89,7 @@ void Engine::events(sf::RenderWindow &window,
     while (window.pollEvent(event)) {
         if (event.type == sf::Event::MouseWheelScrolled) {
             if (event.mouseWheelScroll.wheel == sf::Mouse::VerticalWheel) {
-                std::cout << "wheel type: vertical" << std::endl;
+                DEBUG_MSG("wheel type: vertical" << std::endl);
                 DEBUG_MSG("scroll delta :" << event.mouseWheelScroll.delta << std::endl);
                 view.zoom(1.00f - 0.1f * event.mouseWheelScroll.delta);
                 window.setView(view);
@@ -135,6 +137,11 @@ void Engine::keyboardEvents(sf::RenderWindow &window, sf::Event &event) {
             DEBUG_MSG("shift:" << event.key.shift << std::endl);
             DEBUG_MSG("system:" << event.key.system << std::endl);
             state = EndOfGame;
+            break;
+
+        case sf::Keyboard::G :
+            DEBUG_MSG("gui: " << !gui << std::endl);
+            gui = !gui;
             break;
 
         case sf::Keyboard::Add :

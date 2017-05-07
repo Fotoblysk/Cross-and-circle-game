@@ -8,27 +8,53 @@
 class Board; //FIXME this is baaad
 class AiPlayer : public Player {
 public:
-    AiPlayer();
+    enum Strategy {//TODO change this to strategy design pattern
+        Random,
+        Random2,
+        MinMax,
+        Neural
+    };
 
-    void clacRandomMove(Board &board);
+    AiPlayer(Strategy strategy_in, Player* otherPlayer_in);
 
-    std::vector<int> calculated_move{0, 0};
+
+    std::array<int, 2> calculated_move = {{0, 0}};
     std::atomic_bool isReady{true};
 
     bool isPlayerUsingGui() override;
 
     bool inProggres = false;
 
-    std::vector<int> getResult();
+    std::array<int, 2> getResult();
 
     virtual ~AiPlayer();
 
+    void calcMove(Board board);
+
+    std::thread myThread;
 protected:
 
 private:
-    std::thread myThread;
+    Strategy strategy;
 
     void randomMove(Board boardCopy);
+
+
+    void minMaxMove(Board boardCopy, unsigned int depth);
+
+    void randomMove2(Board boardCopy);
+
+
+    bool isMoveClinging(Board &board, std::array<int,2> &move);
+    Player* otherPlayer = nullptr;
+public:
+    void setOtherPlayer(Player *otherPlayer);
+
+private:
+
+
+    long long int getScore(Board &boardCopy, unsigned int depth, Player *player);
+
 };
 
 #endif // AIPLAYER_H

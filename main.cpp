@@ -28,6 +28,7 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include <Game.h>
+#include <thread>
 
 //....!TO DO!....//////////////
 //TODO(Foto):DONE 0.moving board via right mouse button.
@@ -46,9 +47,12 @@
 /*!
  * \brief Runs RenderWindow. Runs game.
 */
+
 int main() {
     // sf::ContextSettings settings;
     //settings.antialiasingLevel = 8;
+
+    // Makes the main thread wait for the new thread to finish execution, therefore blocks its own execution.
     sf::RenderWindow window(sf::VideoMode(500, 500), "SFML window", sf::Style::Fullscreen/*,settings */);
     Game game(window);
 

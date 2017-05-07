@@ -1,4 +1,4 @@
-//#define NDEBUG
+#define NDEBUG
 /*! \file debugging_tolls.h
  *
  * \brief Personal debug macros. Include after defining NDEBUG to turn off.

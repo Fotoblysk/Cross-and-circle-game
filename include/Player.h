@@ -24,6 +24,8 @@ public:
     virtual bool getMovePremission() { return move_premission; }
 
     bool move_premission = true;
+    char player_char = ' ';
+
     virtual bool isPlayerUsingGui(); //TODO this design is bad
 protected:
     std::string name;

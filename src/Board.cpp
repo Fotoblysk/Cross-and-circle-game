@@ -1,15 +1,16 @@
 #include "Board.h"
 #include<iostream>
 #include <AiPlayer.h>
+#include <fstream>
+#include <unistd.h>
 
 Board::Board()
         :
         height(0),
         width(0) {
-    //ctor
 }
 
-Board::Board(int height_in, int width_in) { // we get mouse_position reference only once to improve performence
+Board::Board(int height_in, int width_in) {
     init(height_in, width_in);
 }
 
@@ -64,7 +65,7 @@ Board::BoardState Board::update(bool &clicked, Player *currrent_turn, sf::Vector
     positioner_tmp = getBoardPosition(current_mouse_position);
     if (positioner_tmp != last_board_position) {
         last_board_position = positioner_tmp;
-        DEBUG_MSG("Position = " << last_board_position.x << "  ,  " << last_board_position.y << std::endl);
+//        DEBUG_MSG("Position = " << last_board_position.x << "  ,  " << last_board_position.y << std::endl);
     }
 #endif
     for (int height_index = 0; height_index < height; height_index++) {
@@ -75,13 +76,24 @@ Board::BoardState Board::update(bool &clicked, Player *currrent_turn, sf::Vector
             else {
                 //TODO this may go bad
                 AiPlayer *ai = dynamic_cast<AiPlayer *>(currrent_turn);
-                if (ai->inProggres == false)
-                    ai->clacRandomMove(*this);
+                if (ai->inProggres == false) {
+                    ai->calcMove(*this);
+                    std::cout << "test" << std::endl;
+                    usleep(1000000);
+                    std::cout << "test" << std::endl;
+                }
                 if (ai->inProggres == true && ai->isReady == true) {
+                    std::ofstream myfile;
                     auto turn = ai->getResult();
-                    std::cout << "duppa" << std::endl;
+                    myfile.open("example.txt");
+                    myfile << getBoardData();
+                    std::cout << "\nmove: " << turn[0] << " " << turn[1] << std::endl;
+                    myfile << ": " << turn[0] << " " << turn[1] << std::endl;
+                    myfile.close();
                     makeMove(turn[0], turn[1], currrent_turn);
+                    std::cout << "\nnumber of 3: " << count(3, currrent_turn) << std::endl;
                     state_tmp = checkWin(turn[0], turn[1], currrent_turn);
+                    getBoardData();
                     return state_tmp;
                 } else {
                     state_tmp = WaitingForTurn;
@@ -89,13 +101,13 @@ Board::BoardState Board::update(bool &clicked, Player *currrent_turn, sf::Vector
                 }
             }
             if (state_tmp != WaitingForTurn) {// TODO(foto) fixxx
-                std::cout << "returning duppa" << std::endl;
                 return state_tmp;
             }
         }
     }
 
-    return state_tmp;
+    return
+            state_tmp;
 }
 
 Board::BoardState Board::updateField(bool clicked, int height_index, int width_index, Player *currrent_turn,
@@ -107,6 +119,7 @@ Board::BoardState Board::updateField(bool clicked, int height_index, int width_i
         {
             if (clicked) {
                 makeMove(height_index, width_index, currrent_turn);
+                std::cout << "\nnumber of 3: " << count(3, currrent_turn) << std::endl;
                 return checkWin(height_index, width_index, currrent_turn);
             }
             return WaitingForTurn;
@@ -227,21 +240,43 @@ void Board::hilight(int height_index, int width_index, sf::Vector2i &current_mou
 
 }
 
-std::vector<std::string> Board::getBoardData() {
-
-    return std::vector<std::string>();
+std::string Board::getBoardData() {
+    std::string boardDataString;
+    for (auto i :board_array) {
+        for (auto j :i)
+            if (j.marked_by == nullptr)
+                boardDataString += '.';
+            else
+                boardDataString += j.marked_by->player_char;
+        boardDataString += '\n';
+    }
+    boardDataString += '\n';
+    return boardDataString;
 }
 
 bool Board::makeMove(int hight, int width, Player *player) {
+    lastMove = {hight, width};
     board_array[hight][width].mark(player);
+    firstMove = false;
+    return false;
+}
+
+bool Board::isSquareMarked(int move_hight, int move_width) {
+    if (board_array[move_hight][move_width].marked_by != nullptr)
+        return true;
+    return false;
+}
+
+bool Board::isMoveInBounds(int move_hight, int move_width) const {
+    if (move_hight >= 0 && move_width >= 0 && move_hight < height && move_width < width)
+        return true;
+
     return false;
 }
 
 bool Board::isMovePossible(int move_hight, int move_width) {
-    if (move_hight >= 0 && move_width >= 0 && move_hight < height && move_width < width) {//TODO enkapsulate
-        std::cout << move_hight << std::endl;
-        std::cout << move_width << std::endl;
-        if (board_array[move_hight][move_width].marked_by == nullptr)
+    if (isMoveInBounds(move_hight, move_width)) {//TODO enkapsulate
+        if (!isSquareMarked(move_hight, move_width))
             return true;
     }
     return false;
@@ -253,6 +288,122 @@ int Board::getHeight() const {
 
 int Board::getWidth() const {
     return width;
+}
+
+bool Board::isItFirstMove() const {
+    return firstMove;
+}
+
+int Board::countNew(int what, Player *player) {
+    int counter = 0;
+
+    for (int height_index = lastMove[0]; height_index < lastMove[0] + 1; height_index++)
+        for (int width_index = lastMove[1]; width_index < lastMove[1] + 1; width_index++)
+            if (board_array[height_index][width_index].marked_by == player) {
+                int lenghtCounterV = 0;
+                if (!isMoveInBounds(height_index, width_index - 1) ||
+                    board_array[height_index][width_index - 1].marked_by != player) {
+                    for (; isMoveInBounds(height_index, width_index + lenghtCounterV) &&
+                           board_array[height_index][width_index + lenghtCounterV].marked_by == player;
+                           ++lenghtCounterV) {
+                    }
+                }
+                int lenghtCounterH = 0;
+                if (!isMoveInBounds(height_index - 1, width_index) ||
+                    board_array[height_index - 1][width_index].marked_by != player) {
+
+                    for (; isMoveInBounds(height_index + lenghtCounterH, width_index) &&
+                           board_array[height_index + lenghtCounterH][width_index].marked_by == player;
+                           ++lenghtCounterH) {
+                    }
+                }
+                int lenghtCounterULDR = 0;
+                if (!isMoveInBounds(height_index - 1, width_index - 1) ||
+                    board_array[height_index - 1][width_index - 1].marked_by != player) {
+
+                    for (; isMoveInBounds(height_index + lenghtCounterULDR, width_index + lenghtCounterULDR) &&
+                           board_array[height_index + lenghtCounterULDR][width_index + lenghtCounterULDR].marked_by ==
+                           player;
+                           ++lenghtCounterULDR) {
+                    }
+                }
+                int lenghtCounterURDL = 0;
+                if (!isMoveInBounds(height_index - 1, width_index - 1) ||
+                    board_array[height_index - 1][width_index + 1].marked_by != player) {
+
+                    for (; isMoveInBounds(height_index + lenghtCounterURDL, width_index - lenghtCounterURDL) &&
+                           board_array[height_index + lenghtCounterURDL][width_index - lenghtCounterURDL].marked_by ==
+                           player;
+                           ++lenghtCounterURDL) {
+                    }
+                }
+                if (lenghtCounterH >= what)
+                    ++counter;
+                if (lenghtCounterV >= what)
+                    ++counter;
+                if (lenghtCounterULDR >= what)
+                    ++counter;
+                if (lenghtCounterURDL >= what)
+                    ++counter;
+            }
+
+    return counter;
+}
+
+int Board::count(int what, Player *player) const {
+    int counter = 0;
+
+    for (int height_index = 0; height_index < height; height_index++)
+        for (int width_index = 0; width_index < width; width_index++)
+            if (board_array[height_index][width_index].marked_by == player) {
+                int lenghtCounterV = 0;
+                if (!isMoveInBounds(height_index, width_index - 1) ||
+                    board_array[height_index][width_index - 1].marked_by != player) {
+                    for (; isMoveInBounds(height_index, width_index + lenghtCounterV) &&
+                           board_array[height_index][width_index + lenghtCounterV].marked_by == player;
+                           ++lenghtCounterV) {
+                    }
+                }
+                int lenghtCounterH = 0;
+                if (!isMoveInBounds(height_index - 1, width_index) ||
+                    board_array[height_index - 1][width_index].marked_by != player) {
+
+                    for (; isMoveInBounds(height_index + lenghtCounterH, width_index) &&
+                           board_array[height_index + lenghtCounterH][width_index].marked_by == player;
+                           ++lenghtCounterH) {
+                    }
+                }
+                int lenghtCounterULDR = 0;
+                if (!isMoveInBounds(height_index - 1, width_index - 1) ||
+                    board_array[height_index - 1][width_index - 1].marked_by != player) {
+
+                    for (; isMoveInBounds(height_index + lenghtCounterULDR, width_index + lenghtCounterULDR) &&
+                           board_array[height_index + lenghtCounterULDR][width_index + lenghtCounterULDR].marked_by ==
+                           player;
+                           ++lenghtCounterULDR) {
+                    }
+                }
+                int lenghtCounterURDL = 0;
+                if (!isMoveInBounds(height_index - 1, width_index - 1) ||
+                    board_array[height_index - 1][width_index + 1].marked_by != player) {
+
+                    for (; isMoveInBounds(height_index + lenghtCounterURDL, width_index - lenghtCounterURDL) &&
+                           board_array[height_index + lenghtCounterURDL][width_index - lenghtCounterURDL].marked_by ==
+                           player;
+                           ++lenghtCounterURDL) {
+                    }
+                }
+                if (lenghtCounterH >= what)
+                    ++counter;
+                if (lenghtCounterV >= what)
+                    ++counter;
+                if (lenghtCounterULDR >= what)
+                    ++counter;
+                if (lenghtCounterURDL >= what)
+                    ++counter;
+            }
+
+    return counter;
 }
 
 

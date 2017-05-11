@@ -4,6 +4,7 @@
 #include <fstream>
 #include <unistd.h>
 
+extern int firstMove[2];
 Board::Board()
         :
         height(0),
@@ -32,6 +33,7 @@ void Board::init(int height_in, int width_in) {
             board_array[height_index][width_index].setTexture(texture);
         }
     }
+    leftMoves = height_in * width_in;
 }
 
 void Board::draw(sf::RenderTarget &target, sf::RenderStates states) const {
@@ -85,7 +87,8 @@ Board::BoardState Board::update(bool &clicked, Player *currrent_turn, sf::Vector
                 if (ai->inProggres == true && ai->isReady == true) {
                     std::ofstream myfile;
                     auto turn = ai->getResult();
-                    myfile.open("example.txt");
+                    myfile.open("example" + std::to_string(firstMove[0]) + "_" + std::to_string(firstMove[1]),
+                                std::ofstream::out | std::ofstream::app);
                     myfile << getBoardData();
                     std::cout << "\nmove: " << turn[0] << " " << turn[1] << std::endl;
                     myfile << ": " << turn[0] << " " << turn[1] << std::endl;
@@ -220,6 +223,8 @@ Board::BoardState Board::checkWin(int height_index_of_last_move, int width_index
         // exit(1);
         return Winner;
     }
+    if (leftMoves <= 0)
+        return Winner;
     ////////////////////
 
     return NextTurn;
@@ -257,7 +262,8 @@ std::string Board::getBoardData() {
 bool Board::makeMove(int hight, int width, Player *player) {
     lastMove = {hight, width};
     board_array[hight][width].mark(player);
-    firstMove = false;
+    firstMoveHappend = false;
+    --leftMoves;
     return false;
 }
 
@@ -291,7 +297,7 @@ int Board::getWidth() const {
 }
 
 bool Board::isItFirstMove() const {
-    return firstMove;
+    return firstMoveHappend;
 }
 
 int Board::countNew(int what, Player *player) {

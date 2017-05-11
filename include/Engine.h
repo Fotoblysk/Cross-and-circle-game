@@ -26,7 +26,7 @@ public:
     EngineState currentState() const;
     //getRemoteTurn
     //connect();
-    bool gui = true;
+    bool gui = false;
 protected:
     Board board;                                    ///< contains dynamic allocated array of squares
     sf::Vector2i mouse;                             ///< current mouse position

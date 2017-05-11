@@ -74,8 +74,9 @@ public:
 private:
     ///<height of the dynamic array of squares
     int width;                                              ///<width of the dynamic array of squares
-    bool firstMove = true;
+    bool firstMoveHappend = true;
     sf::Texture *texture = new sf::Texture;//FIXME memory leaks!!!                                    ///<basic every single square texture
+    int leftMoves = -1;
 };
 
 #endif // BOARD_H

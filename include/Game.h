@@ -7,6 +7,7 @@
 #include<../debugging_tolls.h>
 #include<memory>
 
+extern int firstMove[2];
 /*!
  * \brief Game main class. Class which is used run engine.
  * This class will menage menu and settings

@@ -122,8 +122,13 @@ void AiPlayer::minMaxMove(Board boardCopy, unsigned int depth) {//TODO change to
             }
         }
         isReady = true;
-    } else
+    } else if (firstMove[0] == -1)
         randomMove(boardCopy);
+    else {
+        calculated_move[0] = firstMove[0];
+        calculated_move[1] = firstMove[1];
+        isReady = true;
+    }
 }
 
 void AiPlayer::randomMove2(Board boardCopy) {//TODO change to std::future

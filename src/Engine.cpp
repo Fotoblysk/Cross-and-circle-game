@@ -58,12 +58,16 @@ void Engine::update(sf::RenderWindow &window) {
         clicked = false;
     if (last_turn_board_state == Board::Winner) {
         DEBUG_MSG("Winner is: " << turn->toStr() << std::endl);
-        state = Winner;
+        if(firstMove[1] != -1)
+            state = EndOfGame;
+        else
+            state = Winner;
     }
 
     if (state == PlayingGame && gui == true)
         window.draw(board);
     else if (state == Winner) {
+        window.draw(board);
         window.setView(window.getDefaultView());
         std::string winning_msg = "Winner is: ";
         std::string tmp = "\n\nPress esc to return to menu.";

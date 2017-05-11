@@ -4,7 +4,7 @@
 #include "Player.h"
 #include <atomic>
 #include <thread>
-
+extern int firstMove[2];
 class Board; //FIXME this is baaad
 class AiPlayer : public Player {
 public:

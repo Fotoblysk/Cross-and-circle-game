@@ -96,9 +96,7 @@ long long AiPlayer::getScore(Board &boardCopy, unsigned int depth, Player *playe
 void AiPlayer::minMaxMove(Board boardCopy, unsigned int depth) {//TODO change to std::future
     calculated_move = {0, 0};
     std::vector<std::array<int, 2>> possibleMoves;
-    unsigned short int threadNumber = std::thread::hardware_concurrency();
-    std::vector<std::thread> tArray;
-    tArray.resize(threadNumber);
+    std::vector<std::thread> threads(std::thread::hardware_concurrency());
     bool isOk = false;
     if (!boardCopy.isItFirstMove()) {
         int j = 0;
@@ -110,17 +108,33 @@ void AiPlayer::minMaxMove(Board boardCopy, unsigned int depth) {//TODO change to
                 }
             }
 
-        long long bestScore = LLONG_MIN;
-        for (auto &i :possibleMoves) {
-            auto boardTmp = boardCopy;
-            boardTmp.makeMove(i[0], i[1], this);
-            int score = getScore(boardTmp, depth - 1, otherPlayer);
-            std::cout << "sum : " << i[0] << " " << i[1] << " " << score << std::endl;
-            if (score >= bestScore) {
-                bestScore = score;
-                calculated_move = i;
-            }
+        std::vector<std::future<long long>> scoresF;
+        std::vector<long long> scores;
+        std::vector<Board> boards(possibleMoves.size(), boardCopy);
+        scoresF.reserve(possibleMoves.size());
+        scores.reserve(possibleMoves.size());
+        for (auto i = 0; i < possibleMoves.size(); ++i) {
+            boards[i].makeMove(possibleMoves[i][0], possibleMoves[i][1], this);
+            scoresF.push_back(std::async(std::launch::async, &AiPlayer::getScore, this, std::ref(boards[i]),depth -1, otherPlayer));
+            /*std::packaged_task<long long()> task(
+                    std::bind(&AiPlayer::getScore, this, std::ref(boards[i]), depth, otherPlayer));
+            scoresF[i] = task.get_future();
+            if (!threads[i % threads.size()].joinable()) {
+                threads[i % threads.size()] = std::thread(std::move(task));
+            } else {
+                if (!threads[i % threads.size()].joinable()) {
+                    threads[i % threads.size()].join();
+                    threads[i % threads.size()] = std::thread(std::move(task));
+                } else
+                    --i;
+            }*/
         }
+        for (auto i = 0; i < scoresF.size(); ++i) {
+            auto tmp = scoresF[i].get();
+            scores.push_back(tmp);
+            std::cout << "sum : " << possibleMoves[i][0] << " " << possibleMoves[i][1] << " " << tmp << std::endl;
+        }
+        calculated_move = possibleMoves[std::distance(scores.begin(), std::max_element(scores.begin(), scores.end()))];
         isReady = true;
     } else if (firstMove[0] == -1)
         randomMove(boardCopy);

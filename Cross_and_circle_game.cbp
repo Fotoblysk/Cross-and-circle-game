@@ -1,155 +1,155 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <CodeBlocks_project_file>
-   <FileVersion major="1" minor="6" />
-   <Project>
-      <Option title="Cross_and_circle_game" />
-      <Option makefile_is_custom="1" />
-      <Option compiler="gcc" />
-      <Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;" />
-      <Build>
-      <Target title="all">
-         <Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 all" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="edit_cache">
-         <Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 edit_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="rebuild_cache">
-         <Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game" />
-         <Option type="4" />
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 rebuild_cache" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="Cross_and_circle_game">
-         <Option output="/home/fotoblysk/git-projects/Cross-and-circle-game/Cross_and_circle_game" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/fotoblysk/LIB/SFML-2.4.0/include" />
-            <Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/5" />
-            <Add directory="/usr/include/c++/5/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 Cross_and_circle_game" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      <Target title="Cross_and_circle_game/fast">
-         <Option output="/home/fotoblysk/git-projects/Cross-and-circle-game/Cross_and_circle_game" prefix_auto="0" extension_auto="0" />
-         <Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game" />
-         <Option object_output="./" />
-         <Option type="1" />
-         <Option compiler="gcc" />
-         <Compiler>
-            <Add directory="/home/fotoblysk/LIB/SFML-2.4.0/include" />
-            <Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/include" />
-            <Add directory="/usr/include" />
-            <Add directory="/usr/include/c++/5" />
-            <Add directory="/usr/include/c++/5/backward" />
-            <Add directory="/usr/include/x86_64-linux-gnu" />
-            <Add directory="/usr/include/x86_64-linux-gnu/c++/5" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include" />
-            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed" />
-            <Add directory="/usr/local/include" />
-         </Compiler>
-         <MakeCommands>
-            <Build command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 Cross_and_circle_game/fast" />
-            <CompileFile command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
-            <Clean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-            <DistClean command="/usr/bin/make -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean" />
-         </MakeCommands>
-      </Target>
-      </Build>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/AiPlayer.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Board.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/BoardTree.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/BoardTree.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Engine.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Game.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/HumanPlayer.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/NetworkEngine.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Player.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Square.h">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/main.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/AiPlayer.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Board.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Engine.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Game.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/HumanPlayer.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/NetworkEngine.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Player.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Square.cpp">
-         <Option target="Cross_and_circle_game"/>
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/CMakeLists.txt">
-          <Option virtualFolder="CMake Files\" />
-      </Unit>
-      <Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/cmake_modules/FindSFML.cmake">
-          <Option virtualFolder="CMake Files\cmake_modules\" />
-      </Unit>
-   </Project>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Cross_and_circle_game"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\cmake_modules\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Cross_and_circle_game">
+				<Option output="/home/fotoblysk/git-projects/Cross-and-circle-game/Cross_and_circle_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/include"/>
+					<Add directory="/home/fotoblysk/LIB/SFML-2.4.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 Cross_and_circle_game"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Cross_and_circle_game/fast">
+				<Option output="/home/fotoblysk/git-projects/Cross-and-circle-game/Cross_and_circle_game" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fotoblysk/git-projects/Cross-and-circle-game"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/include"/>
+					<Add directory="/home/fotoblysk/LIB/SFML-2.4.0/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/5"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/5"/>
+					<Add directory="/usr/include/c++/5/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 Cross_and_circle_game/fast"/>
+					<CompileFile command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j2 -f &quot;/home/fotoblysk/git-projects/Cross-and-circle-game/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/AiPlayer.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Board.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/BoardTree.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/BoardTree.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Engine.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Game.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/HumanPlayer.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/NetworkEngine.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Player.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/include/Square.h">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/main.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/AiPlayer.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Board.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Engine.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Game.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/HumanPlayer.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/NetworkEngine.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Player.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/src/Square.cpp">
+			<Option target="Cross_and_circle_game"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/fotoblysk/git-projects/Cross-and-circle-game/cmake_modules/FindSFML.cmake">
+			<Option virtualFolder="CMake Files\cmake_modules\"/>
+		</Unit>
+	</Project>
 </CodeBlocks_project_file>

@@ -77,6 +77,9 @@ private:
     bool firstMoveHappend = true;
     sf::Texture *texture = new sf::Texture;//FIXME memory leaks!!!                                    ///<basic every single square texture
     int leftMoves = -1;
+
+public:
+    std::vector<float> getNeuralBoardData(Player *player_tmp);
 };
 
 #endif // BOARD_H

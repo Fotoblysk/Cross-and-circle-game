@@ -55,6 +55,7 @@ private:
 
     long long int getScore(Board &boardCopy, unsigned int depth, Player *player);
 
+    void neuralMove(Board boardCopy);
 };
 
 #endif // AIPLAYER_H

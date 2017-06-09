@@ -21,10 +21,11 @@ void Engine::init(sf::RenderWindow &window) {
     view = window.getDefaultView();
     state = PlayingGame;
     window.draw(board);
-    AiPlayer *tmp1 = (new AiPlayer(AiPlayer::Strategy::MinMax, nullptr));
-//    HumanPlayer* tmp1 = (new HumanPlayer());
-    players[1].reset(new AiPlayer(AiPlayer::Strategy::MinMax, tmp1));
-    tmp1->setOtherPlayer(players[1].get());
+//    AiPlayer *tmp1 = (new AiPlayer(AiPlayer::Strategy::Neural, nullptr));
+    HumanPlayer* tmp1 = (new HumanPlayer());
+//    players[1].reset(new HumanPlayer);
+    players[1].reset(new AiPlayer(AiPlayer::Strategy::Neural, tmp1));
+//    tmp1->setOtherPlayer(players[1].get());
     players[0].reset(tmp1);
     turn = players[0].get();
     players[0]->setTexture("textures/square_marked_circle.png");

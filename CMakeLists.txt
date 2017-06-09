@@ -4,6 +4,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -pthread")
 set(SOURCE_FILES main.cpp src/AiPlayer.cpp include/AiPlayer.h src/Board.cpp include/Board.h src/Engine.cpp include/Engine.h src/Game.cpp include/Game.h src/HumanPlayer.cpp include/HumanPlayer.h src/NetworkEngine.cpp include/NetworkEngine.h src/Player.cpp include/Player.h src/Square.cpp include/Square.h include/BoardTree.cpp include/BoardTree.h)
 add_executable(Cross_and_circle_game ${SOURCE_FILES})
 include_directories(include)
+include_directories(tiny-dnn)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake_modules" ${CMAKE_MODULE_PATH})
 #Find any version 2.X of SFML
 #See the FindSFML.cmake file for additional details and instructions

@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/include"/>
+					<Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/tiny-dnn"/>
 					<Add directory="/home/fotoblysk/LIB/SFML-2.4.0/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>
@@ -70,6 +71,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/include"/>
+					<Add directory="/home/fotoblysk/git-projects/Cross-and-circle-game/tiny-dnn"/>
 					<Add directory="/home/fotoblysk/LIB/SFML-2.4.0/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/5/include"/>
 					<Add directory="/usr/local/include"/>

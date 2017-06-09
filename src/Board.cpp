@@ -5,6 +5,7 @@
 #include <unistd.h>
 
 extern int firstMove[2];
+
 Board::Board()
         :
         height(0),
@@ -243,6 +244,21 @@ void Board::hilight(int height_index, int width_index, sf::Vector2i &current_mou
     } else if (board_array[height_index][width_index].getFillColor() != sf::Color::White)
         board_array[height_index][width_index].setFillColor(sf::Color::White);
 
+}
+
+std::vector<float> Board::getNeuralBoardData(Player *player_tmp) {
+    std::vector<float> floatArray;
+    floatArray.reserve(height * width);
+    for (auto i :board_array) {
+        for (auto j :i)
+            if (j.marked_by == nullptr)
+                floatArray.push_back(0.f);
+            else if (player_tmp == j.marked_by)
+                floatArray.push_back(1.f);
+            else
+                floatArray.push_back(-1.f);
+    }
+    return floatArray;
 }
 
 std::string Board::getBoardData() {
